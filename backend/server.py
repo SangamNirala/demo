@@ -1,11 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from emergentintegrations.llm.chat import LlmChat, UserMessage
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
+from llm_service import chat_service
 
 app = FastAPI()
 
@@ -31,30 +27,11 @@ async def root():
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     try:
-        # Initialize LlmChat with Emergent LLM key and configure for Gemini
-        chat = LlmChat(
-            api_key=os.getenv("EMERGENT_LLM_KEY"),
-            session_id=f"chat-session",
-            system_message="You are a helpful AI assistant."
-        ).with_model("gemini", "gemini-2.5-flash")
-        
-        # Build conversation context from history
-        conversation_context = ""
-        for msg in request.conversation_history:
-            role = "User" if msg["role"] == "user" else "Assistant"
-            conversation_context += f"{role}: {msg['content']}\n"
-        
-        # Combine context with current message
-        full_message = conversation_context + request.message if conversation_context else request.message
-        
-        print(f"Sending request to Gemini with message: {full_message[:100]}...")
-        
-        # Create user message and send
-        user_message = UserMessage(text=full_message)
-        response = await chat.send_message(user_message)
-        
-        print(f"Received response: {response[:100]}...")
-        
+        # Use the chat service to generate response
+        response = await chat_service.generate_response(
+            message=request.message,
+            conversation_history=request.conversation_history
+        )
         return ChatResponse(response=response)
     
     except Exception as e:
