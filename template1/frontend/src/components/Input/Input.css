@@ -1,0 +1,44 @@
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #667eea;
+}
+
+.input-field:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.input-error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 12px;
+  color: #ef4444;
+}

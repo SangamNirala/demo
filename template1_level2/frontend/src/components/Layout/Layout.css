@@ -1,0 +1,42 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.layout-content {
+  flex: 1;
+  display: flex;
+}
+
+.layout-sidebar {
+  width: 250px;
+  background: #f9fafb;
+  padding: 1rem;
+  border-right: 1px solid #e5e7eb;
+}
+
+.layout-main {
+  flex: 1;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .layout-content {
+    flex-direction: column;
+  }
+  
+  .layout-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
