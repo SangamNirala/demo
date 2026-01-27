@@ -19,7 +19,8 @@ load_dotenv()
 # OPTION 1: GEMINI AI (Direct Integration) - CURRENTLY ACTIVE
 # ============================================
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 class ChatService:
     """Service class for handling chat interactions with Gemini AI directly"""
@@ -37,15 +38,11 @@ class ChatService:
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY not found in environment variables")
         
-        # Configure Gemini
-        genai.configure(api_key=self.api_key)
+        # Initialize Gemini client
+        self.client = genai.Client(api_key=self.api_key)
         
         self.system_message = system_message
         self.model = model
-        self.client = genai.GenerativeModel(
-            model_name=self.model,
-            system_instruction=self.system_message
-        )
     
     async def generate_response(self, message: str, conversation_history: list = None) -> str:
         """
@@ -61,26 +58,42 @@ class ChatService:
         """
         try:
             # Build conversation history for Gemini
-            chat_history = []
-            if conversation_history:
-                for msg in conversation_history:
-                    role = "user" if msg["role"] == "user" else "model"
-                    chat_history.append({
-                        "role": role,
-                        "parts": [msg["content"]]
-                    })
+            contents = []
+            
+            # Add system instruction as first user message (workaround for system instruction)
+            if self.system_message and (not conversation_history or len(conversation_history) == 0):
+                contents.append(types.Content(
+                    role="user",
+                    parts=[types.Part(text=f"System instruction: {self.system_message}\n\nUser: {message}")]
+                ))
+            else:
+                # Add conversation history
+                if conversation_history:
+                    for msg in conversation_history:
+                        role = "user" if msg["role"] == "user" else "model"
+                        contents.append(types.Content(
+                            role=role,
+                            parts=[types.Part(text=msg["content"])]
+                        ))
+                
+                # Add current message
+                contents.append(types.Content(
+                    role="user",
+                    parts=[types.Part(text=message)]
+                ))
             
             print(f"[Gemini/{self.model}] Sending request: {message[:100]}...")
             
-            # Start chat with history
-            chat = self.client.start_chat(history=chat_history)
+            # Generate response
+            response = self.client.models.generate_content(
+                model=self.model,
+                contents=contents
+            )
             
-            # Send message and get response
-            response = chat.send_message(message)
+            response_text = response.text
+            print(f"[Gemini/{self.model}] Received response: {response_text[:100]}...")
             
-            print(f"[Gemini/{self.model}] Received response: {response.text[:100]}...")
-            
-            return response.text
+            return response_text
             
         except Exception as e:
             print(f"Error in ChatService.generate_response: {str(e)}")
