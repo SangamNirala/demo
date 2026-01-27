@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from llm_service import chat_service
+from llm_service import chat_service, professional_chat_service
 
 app = FastAPI()
 
@@ -26,9 +26,27 @@ async def root():
 
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
+    """Regular friendly chatbot endpoint"""
     try:
-        # Use the chat service to generate response
+        # Use the default chat service to generate response
         response = await chat_service.generate_response(
+            message=request.message,
+            conversation_history=request.conversation_history
+        )
+        return ChatResponse(response=response)
+    
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/chat/professional", response_model=ChatResponse)
+async def professional_chat(request: ChatRequest):
+    """Professional business chatbot endpoint"""
+    try:
+        # Use the professional chat service to generate response
+        response = await professional_chat_service.generate_response(
             message=request.message,
             conversation_history=request.conversation_history
         )
