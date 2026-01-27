@@ -15,13 +15,13 @@ class ChatService:
     """Service class for handling chat interactions with Gemini AI directly"""
     
     def __init__(self, system_message: str = "You are a helpful AI assistant.", 
-                 model: str = "gemini-2.0-flash-exp"):
+                 model: str = "gemini-2.5-flash"):
         """
         Initialize the chat service with Gemini API key
         
         Args:
             system_message: The personality/behavior instruction for the AI
-            model: The Gemini model to use (default: gemini-2.0-flash-exp)
+            model: The Gemini model to use (default: gemini-2.5-flash)
         """
         self.api_key = os.getenv("GEMINI_API_KEY")
         if not self.api_key:
