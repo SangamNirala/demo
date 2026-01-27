@@ -31,25 +31,31 @@ async def root():
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     try:
+        # Initialize LlmChat with Emergent LLM key and configure for Gemini
+        chat = LlmChat(
+            api_key=os.getenv("EMERGENT_LLM_KEY"),
+            session_id=f"chat-session",
+            system_message="You are a helpful AI assistant."
+        ).with_model("gemini", "gemini-2.5-flash")
+        
+        # Build conversation context from history
         conversation_context = ""
         for msg in request.conversation_history:
             role = "User" if msg["role"] == "user" else "Assistant"
             conversation_context += f"{role}: {msg['content']}\n"
         
-        full_prompt = conversation_context + f"User: {request.message}\nAssistant:"
+        # Combine context with current message
+        full_message = conversation_context + request.message if conversation_context else request.message
         
-        print(f"Sending request to Gemini with prompt: {full_prompt[:100]}...")
+        print(f"Sending request to Gemini with message: {full_message[:100]}...")
         
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=full_prompt
-        )
+        # Create user message and send
+        user_message = UserMessage(text=full_message)
+        response = await chat.send_message(user_message)
         
-        bot_response = response.text
+        print(f"Received response: {response[:100]}...")
         
-        print(f"Received response: {bot_response[:100]}...")
-        
-        return ChatResponse(response=bot_response)
+        return ChatResponse(response=response)
     
     except Exception as e:
         print(f"Error occurred: {str(e)}")
