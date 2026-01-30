@@ -34,13 +34,16 @@ const transformStudentData = (data) => {
     feeStatus: data.tuition_fees_up_to_date ? 'Paid' : 'Pending',
     counselorVisits: data.counselor_visits || '0',
     
-    // Additional fields
+    // Profile fields
     gender: data.gender,
-    hostelDayScholar: data.hostel_day_scholar,
     familyIncome: data.family_income_formatted || data.family_income,
     parentEducation: data.parent_education,
+    distanceFromCollege: data.distance_from_college ? `${data.distance_from_college} km` : 'N/A',
+    accommodation: data.hostel_day_scholar || 'N/A',
     scholarshipHolder: data.scholarship_holder,
-    distance: data.distance_from_college
+    
+    // Keep original data for reference
+    _raw: data
   };
 };
 
