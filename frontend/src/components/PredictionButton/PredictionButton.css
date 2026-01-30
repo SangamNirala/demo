@@ -6,6 +6,10 @@
 }
 
 .prediction-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
   padding: 1.25rem 3rem;
   font-size: 1.3rem;
   font-weight: 700;
@@ -22,6 +26,17 @@
   position: relative;
   overflow: hidden;
   letter-spacing: 0.3px;
+}
+
+.button-icon {
+  font-size: 1.75rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .prediction-button::before {

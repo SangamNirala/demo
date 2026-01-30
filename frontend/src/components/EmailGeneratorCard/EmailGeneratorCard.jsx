@@ -91,8 +91,13 @@ const EmailGeneratorCard = ({ studentData, predictionData }) => {
   return (
     <div className="email-generator-card">
       <div className="email-generator-header">
-        <h2>📧 Generate Personalized Email</h2>
-        <p>Create AI-powered emails for student outreach</p>
+        <div className="header-icon-wrapper">
+          <span className="header-icon">✉️</span>
+        </div>
+        <div className="header-text">
+          <h2>Generate Personalized Email</h2>
+          <p>✨ Create AI-powered emails for student outreach</p>
+        </div>
       </div>
 
       <div className="email-generator-content">
@@ -109,9 +114,9 @@ const EmailGeneratorCard = ({ studentData, predictionData }) => {
                 onChange={(e) => setEmailType(e.target.value)}
               />
               <div className="option-content">
-                <span className="option-icon">👨‍🎓</span>
+                <span className="option-icon">🎓</span>
                 <span className="option-label">To Student</span>
-                <span className="option-desc">Warm & supportive</span>
+                <span className="option-desc">💙 Warm & supportive</span>
               </div>
             </label>
 
@@ -124,9 +129,9 @@ const EmailGeneratorCard = ({ studentData, predictionData }) => {
                 onChange={(e) => setEmailType(e.target.value)}
               />
               <div className="option-content">
-                <span className="option-icon">👨‍👩‍👦</span>
+                <span className="option-icon">👪</span>
                 <span className="option-label">To Parents</span>
-                <span className="option-desc">Formal & professional</span>
+                <span className="option-desc">🤝 Formal & professional</span>
               </div>
             </label>
 
@@ -141,7 +146,7 @@ const EmailGeneratorCard = ({ studentData, predictionData }) => {
               <div className="option-content">
                 <span className="option-icon">📅</span>
                 <span className="option-label">Meeting Invite</span>
-                <span className="option-desc">Friendly check-in</span>
+                <span className="option-desc">☕ Friendly check-in</span>
               </div>
             </label>
           </div>
@@ -267,7 +272,7 @@ const EmailGeneratorCard = ({ studentData, predictionData }) => {
                 Regenerate
               </button>
               <button className="action-button mail-button" onClick={handleOpenInMailApp}>
-                <span>📬</span>
+                <span>📨</span>
                 Open in Mail App
               </button>
             </div>

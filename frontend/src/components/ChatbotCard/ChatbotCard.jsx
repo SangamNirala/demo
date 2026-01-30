@@ -164,7 +164,7 @@ const ChatbotCard = ({ studentData, predictionData }) => {
     <div className="chatbot-card">
       <div className="chatbot-header">
         <div className="chatbot-title">
-          <span className="chatbot-icon">💬</span>
+          <span className="chatbot-icon">🤖</span>
           <h2>AI Assistant for Faculty</h2>
         </div>
         {messages.length > 0 && (
@@ -177,12 +177,12 @@ const ChatbotCard = ({ studentData, predictionData }) => {
       <div className="chatbot-content">
         {messages.length === 0 ? (
           <div className="chatbot-welcome">
-            <div className="welcome-icon">🤖</div>
-            <h3>Hello! I'm your AI assistant</h3>
-            <p>Ask me anything about this student's risk factors, performance, or recommended interventions.</p>
+            <div className="welcome-icon">👋</div>
+            <h3>Hello! I'm your AI assistant 🤖</h3>
+            <p>💡 Ask me anything about this student's risk factors, performance, or recommended interventions.</p>
             
             <div className="suggestions-container">
-              <p className="suggestions-label">Try asking:</p>
+              <p className="suggestions-label">💭 Try asking:</p>
               <div className="suggestions-grid">
                 {suggestions.map((suggestion, idx) => (
                   <button
@@ -213,7 +213,7 @@ const ChatbotCard = ({ studentData, predictionData }) => {
             ))}
             {isLoading && (
               <div className="message assistant loading">
-                <div className="message-avatar">🤖</div>
+                <div className="message-avatar">💭</div>
                 <div className="message-content">
                   <div className="typing-indicator">
                     <span></span>
@@ -243,7 +243,7 @@ const ChatbotCard = ({ studentData, predictionData }) => {
             className="chatbot-send-btn"
             disabled={!inputMessage.trim() || isLoading}
           >
-            {isLoading ? '⏳' : '📤'}
+            {isLoading ? '⏳' : '🚀'}
           </button>
         </form>
       </div>

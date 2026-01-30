@@ -9,7 +9,8 @@ const PredictionButton = ({ onClick, disabled }) => {
         onClick={onClick}
         disabled={disabled}
       >
-        🔮 Generate Risk Prediction
+        <span className="button-icon">🎯</span>
+        Generate Risk Prediction
       </button>
     </div>
   );

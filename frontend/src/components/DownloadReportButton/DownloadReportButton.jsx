@@ -72,7 +72,7 @@ const DownloadReportButton = ({ studentData, predictionData, rollNo }) => {
           </>
         ) : (
           <>
-            <span className="icon">📄</span>
+            <span className="icon">📊</span>
             Download Detailed Report
           </>
         )}
@@ -87,7 +87,7 @@ const DownloadReportButton = ({ studentData, predictionData, rollNo }) => {
       
       {!error && !isGenerating && (
         <p className="download-hint">
-          Get a comprehensive AI-powered PDF report with detailed analysis and intervention plans
+          📈 Get a comprehensive AI-powered PDF report with detailed analysis and intervention plans
         </p>
       )}
     </div>
