@@ -1,1 +1,1 @@
-// Export component
+export { default } from './StudentProfileCard';
