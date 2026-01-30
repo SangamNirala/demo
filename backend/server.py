@@ -233,7 +233,7 @@ def bad_request(error):
 
 if __name__ == '__main__':
     print("="*60)
-    print("🌐 Server starting on http://localhost:8000")
+    print("🌐 Server starting on http://localhost:8001")
     print("="*60)
     print("\nAvailable endpoints:")
     print("  GET  /api/health              - Health check")
@@ -242,4 +242,4 @@ if __name__ == '__main__':
     print("  POST /api/predict/<roll_no>   - Get dropout prediction")
     print("\n" + "="*60 + "\n")
     
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=8001, debug=True)
