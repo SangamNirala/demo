@@ -8,8 +8,7 @@
     linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(59, 7, 100, 0.85) 50%, rgba(131, 24, 67, 0.85) 100%),
     url('/assets/images/background.png');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center top;
   background-repeat: no-repeat;
   position: relative;
   overflow-x: hidden;
@@ -18,7 +17,7 @@
 /* Animated gradient overlay */
 .App::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -29,12 +28,13 @@
     radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
   animation: gradientShift 15s ease infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
 /* Sparkle effects */
 .App::after {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -52,6 +52,7 @@
   animation: sparkle 20s linear infinite;
   opacity: 0.3;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes gradientShift {
