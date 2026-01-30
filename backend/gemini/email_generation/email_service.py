@@ -39,7 +39,7 @@ class EmailGenerationService:
         meeting_details: Optional[Dict] = None
     ) -> Dict:
         """
-        Generate personalized email using Gemini AI
+        Generate personalized email using Gemini AI via Emergent LLM
         
         Args:
             email_type: Type of email (student, parent, meeting)
@@ -53,7 +53,7 @@ class EmailGenerationService:
         """
         
         if not self.is_available:
-            raise Exception("Email generation service is not available. Please configure GEMINI_API_KEY.")
+            raise Exception("Email generation service is not available. Please configure EMERGENT_LLM_KEY.")
         
         try:
             prompt = self._build_email_prompt(
