@@ -1,37 +1,64 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './SearchSection.css';
 
-const SearchSection = ({ onSearch, isLoading = false, recentSearches = [] }) => {
+const SearchSection = ({ onSearch, isLoading = false }) => {
   const [rollNo, setRollNo] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [error, setError] = useState('');
+  const [riskCategories, setRiskCategories] = useState({
+    high: [],
+    medium: [],
+    low: []
+  });
+  const [showDropdown, setShowDropdown] = useState(null); // 'high', 'medium', 'low', or null
   const inputRef = useRef(null);
   const suggestionsRef = useRef(null);
+  const dropdownRef = useRef(null);
 
-  // Sample suggestions - replace with actual data from API
-  const sampleSuggestions = [
-    { roll_no: '2023CS001', name: 'Rahul Sharma', course: 'B.Tech CSE' },
-    { roll_no: '2023ME4422', name: 'Ekta Verma', course: 'B.Tech ME' },
-    { roll_no: '2023EC4154', name: 'Anjali Bhatia', course: 'B.Tech ECE' },
-    { roll_no: '2022CE3113', name: 'Kritika Mishra', course: 'B.Tech CE' },
-    { roll_no: '2023EE345', name: 'Ishita Goel', course: 'B.Tech EE' },
-  ];
+  // Fetch risk categories on mount
+  useEffect(() => {
+    fetchRiskCategories();
+  }, []);
+
+  const fetchRiskCategories = async () => {
+    try {
+      // Fetch all students
+      const response = await fetch('http://localhost:8001/api/students');
+      const data = await response.json();
+      
+      if (data.students) {
+        // Categorize by risk level
+        const high = [];
+        const medium = [];
+        const low = [];
+        
+        data.students.forEach(student => {
+          const riskPercentage = student.risk_percentage || 0;
+          
+          if (riskPercentage > 60) {
+            high.push(student);
+          } else if (riskPercentage >= 40) {
+            medium.push(student);
+          } else {
+            low.push(student);
+          }
+        });
+        
+        setRiskCategories({ high, medium, low });
+      }
+    } catch (err) {
+      console.error('Error fetching risk categories:', err);
+    }
+  };
 
   // Filter suggestions based on input
   const filteredSuggestions = rollNo.length > 0
-    ? sampleSuggestions.filter(
-        s => s.roll_no.toLowerCase().includes(rollNo.toLowerCase()) ||
-             s.name.toLowerCase().includes(rollNo.toLowerCase())
-      )
+    ? [...riskCategories.high, ...riskCategories.medium, ...riskCategories.low].filter(
+        s => s.roll_no?.toLowerCase().includes(rollNo.toLowerCase()) ||
+             s.name?.toLowerCase().includes(rollNo.toLowerCase())
+      ).slice(0, 10)
     : [];
-
-  // Quick access roll numbers
-  const quickAccess = [
-    { roll_no: '2023ME4422', label: 'High Risk' },
-    { roll_no: '2023EC4154', label: 'Medium Risk' },
-    { roll_no: '2023EE345', label: 'Low Risk' },
-  ];
 
   // Handle form submit
   const handleSubmit = (e) => {
@@ -58,7 +85,13 @@ const SearchSection = ({ onSearch, isLoading = false, recentSearches = [] }) => 
   const handleQuickAccess = (roll) => {
     setRollNo(roll);
     setError('');
+    setShowDropdown(null);
     onSearch(roll);
+  };
+
+  // Toggle dropdown
+  const toggleDropdown = (category) => {
+    setShowDropdown(showDropdown === category ? null : category);
   };
 
   // Handle input change
@@ -77,11 +110,14 @@ const SearchSection = ({ onSearch, isLoading = false, recentSearches = [] }) => 
     inputRef.current?.focus();
   };
 
-  // Close suggestions on outside click
+  // Close suggestions and dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (suggestionsRef.current && !suggestionsRef.current.contains(event.target)) {
         setShowSuggestions(false);
+      }
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(null);
       }
     };
 
@@ -92,14 +128,13 @@ const SearchSection = ({ onSearch, isLoading = false, recentSearches = [] }) => 
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Ctrl/Cmd + K to focus search
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         inputRef.current?.focus();
       }
-      // Escape to clear
       if (e.key === 'Escape') {
         handleClear();
+        setShowDropdown(null);
       }
     };
 
@@ -246,33 +281,183 @@ const SearchSection = ({ onSearch, isLoading = false, recentSearches = [] }) => 
         )}
       </div>
 
-      {/* Quick Access Section */}
-      <div className="quick-access">
-        <span className="quick-access-label">
+      {/* Quick Access Section with Counts */}
+      <div className="quick-access-section">
+        <div className="quick-access-header">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
           </svg>
-          Quick Access:
-        </span>
-        <div className="quick-access-buttons">
-          {quickAccess.map((item) => (
+          <span>Quick Access</span>
+        </div>
+        <div className="quick-access-grid">
+          {/* High Risk Card */}
+          <div className="quick-access-card-wrapper" ref={showDropdown === 'high' ? dropdownRef : null}>
             <button
-              key={item.roll_no}
-              className={`quick-access-btn ${item.label.toLowerCase().replace(' ', '-')}`}
-              onClick={() => handleQuickAccess(item.roll_no)}
+              className="quick-access-card high-risk"
+              onClick={() => toggleDropdown('high')}
             >
-              <span className="quick-btn-roll">{item.roll_no}</span>
-              <span className={`quick-btn-badge ${item.label.toLowerCase().replace(' ', '-')}`}>
-                {item.label}
-              </span>
+              <div className="risk-icon high-risk">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 22h20L12 2zm0 4l7 14H5l7-14zm-1 5v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
+                </svg>
+              </div>
+              <div className="card-content">
+                <span className="risk-badge high-risk">HIGH RISK</span>
+                <span className="roll-number">({riskCategories.high.length})</span>
+              </div>
+              <svg className={`dropdown-arrow ${showDropdown === 'high' ? 'open' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
             </button>
-          ))}
+            
+            {/* Dropdown for High Risk */}
+            {showDropdown === 'high' && riskCategories.high.length > 0 && (
+              <div className="risk-dropdown">
+                <div className="dropdown-header">
+                  <span>High Risk Students ({riskCategories.high.length})</span>
+                </div>
+                <ul className="dropdown-list">
+                  {riskCategories.high.map((student) => (
+                    <li 
+                      key={student.roll_no}
+                      className="dropdown-item"
+                      onClick={() => handleQuickAccess(student.roll_no)}
+                    >
+                      <div className="student-avatar high-risk">
+                        {student.name?.charAt(0) || 'S'}
+                      </div>
+                      <div className="student-info">
+                        <span className="student-name">{student.name}</span>
+                        <span className="student-details">
+                          {student.roll_no} • {student.risk_percentage?.toFixed(1)}%
+                        </span>
+                      </div>
+                      <div className="arrow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* Medium Risk Card */}
+          <div className="quick-access-card-wrapper" ref={showDropdown === 'medium' ? dropdownRef : null}>
+            <button
+              className="quick-access-card medium-risk"
+              onClick={() => toggleDropdown('medium')}
+            >
+              <div className="risk-icon medium-risk">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" fill="none"/>
+                </svg>
+              </div>
+              <div className="card-content">
+                <span className="risk-badge medium-risk">MEDIUM RISK</span>
+                <span className="roll-number">({riskCategories.medium.length})</span>
+              </div>
+              <svg className={`dropdown-arrow ${showDropdown === 'medium' ? 'open' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            
+            {/* Dropdown for Medium Risk */}
+            {showDropdown === 'medium' && riskCategories.medium.length > 0 && (
+              <div className="risk-dropdown">
+                <div className="dropdown-header">
+                  <span>Medium Risk Students ({riskCategories.medium.length})</span>
+                </div>
+                <ul className="dropdown-list">
+                  {riskCategories.medium.map((student) => (
+                    <li 
+                      key={student.roll_no}
+                      className="dropdown-item"
+                      onClick={() => handleQuickAccess(student.roll_no)}
+                    >
+                      <div className="student-avatar medium-risk">
+                        {student.name?.charAt(0) || 'S'}
+                      </div>
+                      <div className="student-info">
+                        <span className="student-name">{student.name}</span>
+                        <span className="student-details">
+                          {student.roll_no} • {student.risk_percentage?.toFixed(1)}%
+                        </span>
+                      </div>
+                      <div className="arrow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* Low Risk Card */}
+          <div className="quick-access-card-wrapper" ref={showDropdown === 'low' ? dropdownRef : null}>
+            <button
+              className="quick-access-card low-risk"
+              onClick={() => toggleDropdown('low')}
+            >
+              <div className="risk-icon low-risk">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div className="card-content">
+                <span className="risk-badge low-risk">LOW RISK</span>
+                <span className="roll-number">({riskCategories.low.length})</span>
+              </div>
+              <svg className={`dropdown-arrow ${showDropdown === 'low' ? 'open' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            
+            {/* Dropdown for Low Risk */}
+            {showDropdown === 'low' && riskCategories.low.length > 0 && (
+              <div className="risk-dropdown">
+                <div className="dropdown-header">
+                  <span>Low Risk Students ({riskCategories.low.length})</span>
+                </div>
+                <ul className="dropdown-list">
+                  {riskCategories.low.map((student) => (
+                    <li 
+                      key={student.roll_no}
+                      className="dropdown-item"
+                      onClick={() => handleQuickAccess(student.roll_no)}
+                    >
+                      <div className="student-avatar low-risk">
+                        {student.name?.charAt(0) || 'S'}
+                      </div>
+                      <div className="student-info">
+                        <span className="student-name">{student.name}</span>
+                        <span className="student-details">
+                          {student.roll_no} • {student.risk_percentage?.toFixed(1)}%
+                        </span>
+                      </div>
+                      <div className="arrow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Info Text */}
-      <div className="search-info">
-        <div className="info-item">
+      {/* Info Footer */}
+      <div className="search-footer">
+        <div className="footer-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10" />
             <path d="M12 16v-4" />
@@ -280,7 +465,7 @@ const SearchSection = ({ onSearch, isLoading = false, recentSearches = [] }) => 
           </svg>
           <span>Enter a valid roll number to analyze dropout risk</span>
         </div>
-        <div className="info-item">
+        <div className="footer-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />

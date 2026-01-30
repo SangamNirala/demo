@@ -126,13 +126,13 @@ def get_student(roll_no):
 @app.route('/api/students', methods=['GET'])
 def list_students():
     """
-    List all students
+    List all students with risk data
     
     Query Parameters:
         search: Optional search query
         
     Returns:
-        JSON with list of all students
+        JSON with list of all students including risk percentages
     """
     try:
         students_data = load_students()
@@ -143,7 +143,9 @@ def list_students():
                 'roll_no': roll_no,
                 'name': data.get('name', 'Unknown'),
                 'course': data.get('course', 'N/A'),
-                'year': data.get('year', 'N/A')
+                'year': data.get('year', 'N/A'),
+                'risk_percentage': data.get('risk_percentage', 0),
+                'risk_level': data.get('risk_level', 'UNKNOWN')
             }
             for roll_no, data in students.items()
         ]
