@@ -4,13 +4,15 @@ Chatbot Service Module
 
 This module provides an AI-powered chatbot for faculty/admin to ask questions
 about students, get insights, and receive guidance.
+Uses Emergent LLM key via emergentintegrations library.
 """
 
 import os
 import json
 from typing import Dict, List, Optional
-import requests
+import asyncio
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 # Load environment variables from backend/.env
 current_dir = os.path.dirname(os.path.abspath(__file__))
