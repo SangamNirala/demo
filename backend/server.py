@@ -31,6 +31,9 @@ from gemini.chatbot.chatbot_routes import chatbot_bp
 # Import PDF report routes
 from gemini.pdf_generation.pdf_routes import pdf_bp
 
+# Import email generation routes
+from gemini.email_generation.email_routes import email_bp
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
@@ -38,6 +41,7 @@ CORS(app)
 # Register blueprints
 app.register_blueprint(chatbot_bp)
 app.register_blueprint(pdf_bp)
+app.register_blueprint(email_bp, url_prefix='/api/email')
 
 # Initialize prediction service with Gemini AI enabled
 print("\n" + "="*60)
@@ -259,6 +263,7 @@ if __name__ == '__main__':
     print("  POST /api/predict/<roll_no>         - Get dropout prediction")
     print("  POST /api/chatbot/chat              - Chatbot conversation")
     print("  POST /api/pdf/generate/<roll_no>    - Generate PDF report")
+    print("  POST /api/email/generate            - Generate personalized email")
     print("\n" + "="*60 + "\n")
     
     app.run(host='0.0.0.0', port=8001, debug=True)

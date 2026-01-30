@@ -1,0 +1,24 @@
+{
+  "emailType": "student",
+  "studentData": {
+    "name": "John Doe",
+    "rollNo": "2023BT2086",
+    "course": "B.Tech Computer Science",
+    "year": "2nd Year"
+  },
+  "predictionData": {
+    "riskLevel": "MEDIUM",
+    "riskPercentage": 45,
+    "riskFactors": [
+      {
+        "name": "Low Attendance",
+        "contribution": 35
+      },
+      {
+        "name": "Declining CGPA",
+        "contribution": 25
+      }
+    ]
+  },
+  "additionalNotes": "Student has been struggling with time management"
+}
