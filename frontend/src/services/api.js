@@ -72,7 +72,19 @@ export const getPrediction = async (rollNo) => {
       const errorData = await response.json();
       throw new Error(errorData.message || 'Prediction failed');
     }
-    return await response.json();
+    const data = await response.json();
+    
+    // Transform snake_case to camelCase for frontend
+    return {
+      error: data.error,
+      studentInfo: data.student_info,
+      riskLevel: data.risk_level,
+      riskLevelInfo: data.risk_level_info,
+      riskPercentage: data.risk_percentage,
+      riskFactors: data.risk_factors || [],
+      recommendations: data.recommendations || [],
+      predictionDetails: data.prediction_details
+    };
   } catch (error) {
     throw error;
   }
