@@ -3,14 +3,15 @@ Gemini Service Module
 =====================
 
 This module provides AI-powered personalized intervention recommendations
-using Google's Gemini API.
+using Google's Gemini API via Emergent LLM integration.
 """
 
 import os
 import json
 from typing import Dict, List, Optional
-import requests
+import asyncio
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 # Load environment variables
 load_dotenv()
@@ -20,18 +21,18 @@ class GeminiService:
     """Service for generating personalized recommendations using Gemini AI"""
     
     def __init__(self):
-        """Initialize Gemini service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize Gemini service with Emergent LLM key"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         # Using Gemini 2.5 Flash model
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found in environment variables")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found in environment variables")
             print("   Falling back to static recommendations")
         else:
-            print(f"✅ Gemini AI service initialized with {self.model_name}")
+            print(f"✅ Gemini AI service initialized with {self.model_name} via Emergent LLM")
     
     def generate_personalized_recommendations(
         self,
