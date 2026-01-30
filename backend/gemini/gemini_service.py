@@ -152,19 +152,35 @@ Generate exactly 5 personalized intervention recommendations. Each recommendatio
 
 For each recommendation, provide:
 - A clear, concise title (max 6 words)
-- A detailed description explaining WHY this intervention is needed and HOW it will help (2-3 sentences)
+- A description in BULLET POINT format with key terms in **bold** for emphasis
 - Priority level: "urgent", "high", "medium", or "low"
 - An appropriate emoji icon
+
+DESCRIPTION FORMAT REQUIREMENTS:
+- Use 2-4 bullet points separated by " | " (pipe character)
+- Keep each bullet point to 1-2 short sentences
+- Use **bold** for key actions, important terms, and outcomes
+- Make it scannable and easy to read
+- Focus on actionable steps
+
+Example description format:
+"• **Connect immediately** with the financial aid office to explore payment plans and emergency funds | • **Address the 3-month delay** to reduce stress and allow focus on academics | • This will **alleviate financial burden** and improve overall well-being"
 
 Format your response as a JSON array with this exact structure:
 [
   {{
     "title": "Recommendation Title",
-    "description": "Detailed explanation of the intervention and its benefits.",
+    "description": "• **Bold key action** with explanation | • **Another key point** with brief detail | • Expected **outcome** or benefit",
     "priority": "high",
     "icon": "📚"
   }}
 ]
+
+CRITICAL JSON FORMATTING RULES:
+- Use " | " (space-pipe-space) to separate bullet points, NOT newlines
+- Ensure all strings are on a single line
+- No line breaks within string values
+- Valid JSON syntax only
 
 IMPORTANT:
 - Make recommendations specific to the student's actual problems
@@ -172,6 +188,7 @@ IMPORTANT:
 - Prioritize interventions that address multiple issues
 - Be empathetic and solution-focused
 - Use varied, relevant emojis for each recommendation
+- ALWAYS use bullet points (•) and **bold** formatting in descriptions
 - Return ONLY the JSON array, no additional text"""
 
         return prompt
@@ -193,7 +210,8 @@ IMPORTANT:
                 "temperature": 0.7,
                 "topK": 40,
                 "topP": 0.95,
-                "maxOutputTokens": 2048,
+                "maxOutputTokens": 3000,  # Increased for longer responses
+                "response_mime_type": "application/json"  # Request JSON response
             }
         }
         
@@ -232,8 +250,35 @@ IMPORTANT:
             
             response_text = response_text.strip()
             
-            # Parse JSON
-            recommendations_raw = json.loads(response_text)
+            # Try to parse JSON directly first
+            try:
+                recommendations_raw = json.loads(response_text)
+            except json.JSONDecodeError as e:
+                # If parsing fails, try to fix common issues
+                print(f"⚠️  Initial JSON parse failed, attempting to fix...")
+                
+                # Try to fix incomplete JSON by completing it
+                # Check if it's just missing closing brackets
+                if not response_text.endswith(']'):
+                    # Count opening and closing brackets
+                    open_braces = response_text.count('{')
+                    close_braces = response_text.count('}')
+                    open_brackets = response_text.count('[')
+                    close_brackets = response_text.count(']')
+                    
+                    # Add missing closing characters
+                    if open_braces > close_braces:
+                        # Find the last complete object
+                        last_complete = response_text.rfind('},')
+                        if last_complete > 0:
+                            response_text = response_text[:last_complete + 1]
+                    
+                    # Add missing closing bracket
+                    if open_brackets > close_brackets:
+                        response_text += ']'
+                
+                # Try parsing again
+                recommendations_raw = json.loads(response_text)
             
             # Format recommendations
             recommendations = []
@@ -252,21 +297,28 @@ IMPORTANT:
                 recommendations.insert(0, {
                     'id': 0,
                     'title': 'Immediate Intervention Required',
-                    'description': 'Schedule urgent meeting with student, advisor, and support team to address critical risk factors.',
+                    'description': '• **Schedule urgent meeting** with student, advisor, and support team | • **Address critical risk factors** immediately | • This intervention is **time-sensitive** and requires immediate action',
                     'priority': 'urgent',
                     'icon': '🚨',
                     'action': 'urgent_intervention'
                 })
                 recommendations = recommendations[:5]  # Keep only 5
             
+            print(f"✅ Successfully parsed {len(recommendations)} Gemini recommendations")
             return recommendations
             
         except json.JSONDecodeError as e:
             print(f"❌ Error parsing Gemini response as JSON: {e}")
-            print(f"   Response text: {response_text[:200]}...")
+            print(f"   Response text (first 500 chars): {response_text[:500]}...")
+            # Save full response for debugging
+            with open('gemini_error_response.txt', 'w', encoding='utf-8') as f:
+                f.write(response_text)
+            print(f"   Full response saved to gemini_error_response.txt")
             raise
         except Exception as e:
             print(f"❌ Error formatting Gemini recommendations: {e}")
+            import traceback
+            traceback.print_exc()
             raise
     
     def _get_fallback_recommendations(

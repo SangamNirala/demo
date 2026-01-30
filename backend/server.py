@@ -25,9 +25,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # Import prediction service with Gemini integration
 from services.prediction_service.prediction_service import PredictionService
 
+# Import chatbot routes
+from gemini.chatbot.chatbot_routes import chatbot_bp
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
+
+# Register chatbot blueprint
+app.register_blueprint(chatbot_bp)
 
 # Initialize prediction service with Gemini AI enabled
 print("\n" + "="*60)
