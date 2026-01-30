@@ -22,22 +22,23 @@ load_dotenv(env_path)
 
 
 class ChatbotService:
-    """Service for AI-powered faculty/admin chatbot"""
+    """Service for AI-powered faculty/admin chatbot using Emergent LLM key"""
     
     def __init__(self):
-        """Initialize chatbot service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize chatbot service with emergentintegrations"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         # Conversation history (in-memory, can be moved to database)
         self.conversation_history = {}
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found for chatbot")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found for chatbot")
         else:
-            print(f"✅ Chatbot service initialized with {self.model_name}")
+            print(f"✅ Chatbot service initialized with emergentintegrations using {self.model_name}")
+            print(f"   Using Emergent LLM key for chatbot")
     
     def chat(
         self,
