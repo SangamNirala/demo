@@ -171,10 +171,10 @@ TOP RISK FACTORS:
         
         return context
     
-    def _build_prompt(self, user_message: str, context: str, history: List[Dict]) -> str:
-        """Build the prompt for Gemini API"""
+    def _build_system_message(self, context: str) -> str:
+        """Build the system message for emergentintegrations"""
         
-        system_prompt = """You are an expert educational counselor and student success advisor AI assistant. You help faculty and administrators understand student risk factors, provide actionable guidance, and answer questions about student performance and interventions.
+        system_prompt = f"""You are an expert educational counselor and student success advisor AI assistant. You help faculty and administrators understand student risk factors, provide actionable guidance, and answer questions about student performance and interventions.
 
 GUIDELINES:
 1. Be professional, empathetic, and solution-focused
@@ -191,66 +191,43 @@ RESPONSE FORMAT:
 - Use bullet points (•) for lists
 - Use **bold** for important terms and actions
 - Keep responses focused and actionable
-"""
-        
-        # Build conversation history
-        history_text = ""
-        if history:
-            history_text = "\n\nCONVERSATION HISTORY:\n"
-            for msg in history[-6:]:  # Last 3 exchanges
-                role = "Faculty" if msg['role'] == 'user' else "Assistant"
-                history_text += f"{role}: {msg['message']}\n"
-        
-        # Build full prompt
-        prompt = f"""{system_prompt}
 
+CURRENT STUDENT CONTEXT:
 {context}
-{history_text}
-
-FACULTY QUESTION:
-{user_message}
-
-Please provide a helpful, specific response based on the student data above. Be direct and actionable."""
-        
-        return prompt
+"""
+        return system_prompt
     
-    def _call_gemini_api(self, prompt: str) -> str:
-        """Call Gemini API with the prompt"""
+    def _call_llm_api(self, user_message: str, system_message: str, session_id: str) -> str:
+        """Call emergentintegrations LLM API"""
         
-        headers = {
-            'Content-Type': 'application/json',
-        }
-        
-        payload = {
-            "contents": [{
-                "parts": [{
-                    "text": prompt
-                }]
-            }],
-            "generationConfig": {
-                "temperature": 0.7,
-                "topK": 40,
-                "topP": 0.95,
-                "maxOutputTokens": 2048,  # Increased for longer responses
-            }
-        }
-        
-        url = f"{self.api_url}?key={self.api_key}"
-        
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        response.raise_for_status()
-        
-        result = response.json()
-        
-        # Extract text from response
-        if 'candidates' in result and len(result['candidates']) > 0:
-            candidate = result['candidates'][0]
-            if 'content' in candidate and 'parts' in candidate['content']:
-                parts = candidate['content']['parts']
-                if len(parts) > 0 and 'text' in parts[0]:
-                    return parts[0]['text']
-        
-        raise Exception("Invalid response format from Gemini API")
+        try:
+            # Create LlmChat instance with system message
+            chat = LlmChat(
+                api_key=self.api_key,
+                session_id=session_id,
+                system_message=system_message
+            )
+            
+            # Configure to use Gemini model
+            chat.with_model(self.provider, self.model_name)
+            
+            # Create user message
+            message = UserMessage(text=user_message)
+            
+            # Send message and get response (sync wrapper for async)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                response = loop.run_until_complete(chat.send_message(message))
+                return response
+            finally:
+                loop.close()
+                
+        except Exception as e:
+            print(f"❌ Error calling emergentintegrations API: {e}")
+            import traceback
+            traceback.print_exc()
+            raise
 
 
 # Singleton instance
