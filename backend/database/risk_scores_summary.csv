@@ -1,0 +1,101 @@
+roll_no,name,course,year,risk_percentage,risk_level,attendance_percentage,cgpa_current,actual_dropout_status
+2023EC4154,Anjali Bhatia,B.Tech Electronics & Communication,2,40.6,MEDIUM,74.4,7.1,0
+2023EE345,Ishita Goel,B.Tech Electrical Engineering,2,38.4,LOW,90.4,6.2,0
+2024BT061,Divya Bansal,B.Tech Biotechnology,2,39.2,LOW,80.9,6.3,0
+2023BT2086,Rashmi Yadav,B.Tech Biotechnology,1,56.8,MEDIUM,43.4,7.9,1
+2023CS3944,Sneha Kumar,B.Tech Computer Science,1,61.8,MEDIUM,40.0,8.3,1
+2021CS1078,Neha Mishra,B.Tech Computer Science,1,63.4,MEDIUM,27.4,6.6,1
+2023EC1688,Tushar Nair,B.Tech Electronics & Communication,1,61.1,MEDIUM,35.2,7.1,1
+2021BT3362,Neha Chauhan,B.Tech Biotechnology,4,43.1,MEDIUM,77.9,6.9,0
+2022CE3113,Kritika Mishra,B.Tech Civil Engineering,3,58.3,MEDIUM,39.6,6.0,1
+2022CS179,Ekta Reddy,B.Tech Computer Science,2,54.5,MEDIUM,53.5,5.7,1
+2024CE1527,Ankit Singh,B.Tech Civil Engineering,3,65.2,MEDIUM,27.5,6.2,1
+2023CS4261,Tanvi Kapoor,B.Tech Computer Science,3,58.7,MEDIUM,61.1,7.9,1
+2024EE4173,Kavya Joshi,B.Tech Electrical Engineering,1,46.0,MEDIUM,65.0,7.0,0
+2021IT3513,Karan Malhotra,B.Tech Information Technology,2,54.8,MEDIUM,57.8,5.7,1
+2021CS276,Sneha Tiwari,B.Tech Computer Science,1,40.8,MEDIUM,68.0,7.2,0
+2022IT1295,Sachin Shah,B.Tech Information Technology,4,52.1,MEDIUM,64.5,6.2,1
+2023CE4184,Tanvi Mishra,B.Tech Civil Engineering,2,36.2,LOW,91.1,7.2,0
+2023IT1264,Priya Reddy,B.Tech Information Technology,2,37.9,LOW,94.9,8.1,0
+2024IT2317,Ravi Bansal,B.Tech Information Technology,3,60.0,MEDIUM,37.2,7.3,1
+2022EC2758,Varun Khanna,B.Tech Electronics & Communication,3,61.5,MEDIUM,51.3,7.3,1
+2023CE3780,Aarti Agarwal,B.Tech Civil Engineering,1,36.9,LOW,81.6,6.2,0
+2021EE406,Kavya Joshi,B.Tech Electrical Engineering,3,46.6,MEDIUM,65.0,8.2,0
+2021CS1898,Divya Mishra,B.Tech Computer Science,4,61.2,MEDIUM,43.7,5.9,1
+2023BT1951,Lakshmi Bansal,B.Tech Biotechnology,1,60.0,MEDIUM,49.0,5.2,1
+2022EC909,Riya Kapoor,B.Tech Electronics & Communication,3,42.0,MEDIUM,74.9,5.3,0
+2024IT3614,Aditya Malhotra,B.Tech Information Technology,3,67.2,MEDIUM,32.7,5.6,1
+2023CH101,Ishita Kumar,B.Tech Chemical Engineering,2,62.5,MEDIUM,35.5,6.6,1
+2024EC3698,Vishal Chauhan,B.Tech Electronics & Communication,2,40.2,MEDIUM,72.6,5.3,0
+2023CS4304,Varun Agarwal,B.Tech Computer Science,2,58.4,MEDIUM,41.5,5.9,1
+2023EE2952,Tanvi Mishra,B.Tech Electrical Engineering,1,44.8,MEDIUM,65.0,7.1,0
+2022EE2851,Shreya Yadav,B.Tech Electrical Engineering,3,59.4,MEDIUM,39.2,8.2,1
+2021BT2389,Amit Mehta,B.Tech Biotechnology,3,62.9,MEDIUM,41.5,5.8,1
+2022ME1519,Arjun Kapoor,B.Tech Mechanical Engineering,3,43.5,MEDIUM,74.6,6.1,0
+2022CS3220,Garima Jain,B.Tech Computer Science,2,55.6,MEDIUM,62.4,4.8,1
+2023EE1817,Ekta Mehta,B.Tech Electrical Engineering,1,43.1,MEDIUM,65.5,5.8,0
+2021EE3667,Arjun Goel,B.Tech Electrical Engineering,4,57.1,MEDIUM,48.1,7.0,1
+2024EC3864,Naveen Mehta,B.Tech Electronics & Communication,1,40.2,MEDIUM,70.2,5.8,0
+2022CS847,Kritika Agarwal,B.Tech Computer Science,2,42.1,MEDIUM,77.1,5.6,0
+2023EC175,Divya Tiwari,B.Tech Electronics & Communication,1,62.0,MEDIUM,46.5,6.2,1
+2024IT2116,Rashmi Jain,B.Tech Information Technology,3,61.5,MEDIUM,38.0,6.2,1
+2021CS1053,Lakshmi Patel,B.Tech Computer Science,4,60.5,MEDIUM,55.0,7.5,1
+2023CH2800,Sachin Khanna,B.Tech Chemical Engineering,3,57.4,MEDIUM,54.0,5.8,1
+2023EE1792,Amit Yadav,B.Tech Electrical Engineering,3,67.4,MEDIUM,29.9,7.8,1
+2023BT2296,Sachin Mehta,B.Tech Biotechnology,2,39.5,LOW,80.3,7.2,0
+2021CE2650,Sachin Nair,B.Tech Civil Engineering,4,51.0,MEDIUM,65.0,6.0,1
+2022EC2919,Meera Reddy,B.Tech Electronics & Communication,2,57.4,MEDIUM,52.0,5.7,1
+2022CH3390,Meera Bansal,B.Tech Chemical Engineering,1,42.7,MEDIUM,73.6,5.7,0
+2022CH223,Aarti Khanna,B.Tech Chemical Engineering,2,57.9,MEDIUM,46.3,5.9,1
+2024EC3032,Anjali Reddy,B.Tech Electronics & Communication,3,42.4,MEDIUM,79.6,7.3,0
+2023EE1720,Varun Shah,B.Tech Electrical Engineering,2,60.1,MEDIUM,50.7,5.7,1
+2021ME2037,Vishal Tiwari,B.Tech Mechanical Engineering,1,51.5,MEDIUM,56.1,5.0,1
+2023EC3254,Aarti Bansal,B.Tech Electronics & Communication,1,56.7,MEDIUM,60.8,6.3,1
+2021BT3048,Garima Reddy,B.Tech Biotechnology,3,62.2,MEDIUM,39.9,6.8,1
+2022CH4378,Neha Desai,B.Tech Chemical Engineering,2,67.8,MEDIUM,25.0,5.6,1
+2024ME1945,Shreya Yadav,B.Tech Mechanical Engineering,2,65.9,MEDIUM,36.2,6.8,1
+2022CE404,Riya Kapoor,B.Tech Civil Engineering,4,37.8,LOW,83.0,6.2,0
+2022CS1868,Varun Goel,B.Tech Computer Science,4,62.9,MEDIUM,43.3,6.0,1
+2021IT4098,Bhavna Reddy,B.Tech Information Technology,3,35.1,LOW,98.0,5.8,0
+2023ME4422,Ekta Verma,B.Tech Mechanical Engineering,2,60.1,MEDIUM,34.9,7.2,1
+2022ME3989,Megha Kumar,B.Tech Mechanical Engineering,3,40.7,MEDIUM,86.7,6.5,0
+2022ME2011,Sneha Shah,B.Tech Mechanical Engineering,1,45.5,MEDIUM,68.4,6.2,0
+2023EC1048,Swati Khanna,B.Tech Electronics & Communication,1,38.8,LOW,82.2,7.0,0
+2023CS1118,Nikita Patel,B.Tech Computer Science,2,44.7,MEDIUM,72.1,6.5,0
+2021CE1655,Bhavna Iyer,B.Tech Civil Engineering,1,60.0,MEDIUM,31.8,7.3,1
+2024CH3197,Yash Kumar,B.Tech Chemical Engineering,3,39.5,LOW,82.8,6.0,0
+2021CS646,Meera Shah,B.Tech Computer Science,3,37.7,LOW,84.0,6.0,0
+2023CE3840,Rajesh Reddy,B.Tech Civil Engineering,3,56.5,MEDIUM,61.1,6.5,1
+2023EE803,Ishita Nair,B.Tech Electrical Engineering,2,38.1,LOW,86.9,6.4,0
+2024IT071,Naveen Pandey,B.Tech Information Technology,1,39.1,LOW,84.7,5.9,0
+2022IT021,Ekta Shah,B.Tech Information Technology,3,38.2,LOW,82.6,6.6,0
+2024EC1218,Nikita Nair,B.Tech Electronics & Communication,1,42.1,MEDIUM,71.3,6.4,0
+2023EE3347,Varun Mishra,B.Tech Electrical Engineering,1,63.6,MEDIUM,39.8,7.5,1
+2024CE560,Amit Bansal,B.Tech Civil Engineering,2,35.9,LOW,98.0,6.3,0
+2024BT867,Vivek Jain,B.Tech Biotechnology,2,63.5,MEDIUM,35.3,6.2,1
+2022CS1199,Swati Khanna,B.Tech Computer Science,4,39.5,LOW,86.7,7.4,0
+2022CS1664,Nisha Sharma,B.Tech Computer Science,4,36.5,LOW,98.0,7.1,0
+2023EE1105,Kritika Tiwari,B.Tech Electrical Engineering,2,44.4,MEDIUM,65.0,6.2,0
+2021CE1882,Aditya Yadav,B.Tech Civil Engineering,1,59.9,MEDIUM,45.8,5.6,1
+2023CH2785,Ishita Verma,B.Tech Chemical Engineering,2,36.5,LOW,87.4,6.5,0
+2024CE3568,Aditya Gupta,B.Tech Civil Engineering,3,40.9,MEDIUM,73.5,7.0,0
+2024CE1969,Riya Bansal,B.Tech Civil Engineering,3,42.8,MEDIUM,73.8,5.9,0
+2024EC397,Rashmi Yadav,B.Tech Electronics & Communication,2,32.2,LOW,98.0,6.0,0
+2021IT2136,Diksha Jain,B.Tech Information Technology,1,57.3,MEDIUM,48.5,5.5,1
+2022BT4002,Akash Verma,B.Tech Biotechnology,2,66.4,MEDIUM,41.6,6.8,1
+2024ME990,Arjun Pandey,B.Tech Mechanical Engineering,1,61.7,MEDIUM,36.6,6.5,1
+2023BT2008,Ishita Kumar,B.Tech Biotechnology,4,48.2,MEDIUM,65.5,6.6,0
+2022BT1318,Diksha Jain,B.Tech Biotechnology,3,59.3,MEDIUM,52.9,5.7,1
+2021BT2274,Manish Chauhan,B.Tech Biotechnology,4,62.1,MEDIUM,45.0,6.4,1
+2024CE1273,Anjali Nair,B.Tech Civil Engineering,3,61.8,MEDIUM,34.2,5.5,1
+2024BT436,Pooja Tiwari,B.Tech Biotechnology,3,42.1,MEDIUM,72.1,6.9,0
+2024BT089,Ankit Gupta,B.Tech Biotechnology,2,44.9,MEDIUM,71.0,7.0,0
+2021CS1946,Nikita Bansal,B.Tech Computer Science,2,35.5,LOW,91.5,7.4,0
+2022EC1560,Kunal Singh,B.Tech Electronics & Communication,4,38.8,LOW,82.9,6.6,0
+2023BT3264,Diksha Reddy,B.Tech Biotechnology,1,36.8,LOW,96.8,7.4,0
+2021ME1690,Manish Nair,B.Tech Mechanical Engineering,2,64.7,MEDIUM,35.8,6.7,1
+2024CE3453,Ananya Chauhan,B.Tech Civil Engineering,3,38.7,LOW,76.9,5.8,0
+2024CS395,Shreya Verma,B.Tech Computer Science,1,40.7,MEDIUM,83.9,7.2,0
+2022EC3846,Deepak Agarwal,B.Tech Electronics & Communication,1,56.5,MEDIUM,57.4,6.4,1
+2024CH538,Gaurav Malhotra,B.Tech Chemical Engineering,2,37.3,LOW,92.2,5.8,0
+2022EE4267,Aditya Yadav,B.Tech Electrical Engineering,4,39.1,LOW,84.4,4.3,0

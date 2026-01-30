@@ -1,0 +1,59 @@
+.risk-alert-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 3px solid #ef4444;
+}
+
+.alert-header {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.alert-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.alert-content {
+  padding: 2rem;
+}
+
+.student-info {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.student-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.risk-level-box {
+  text-align: center;
+  padding: 2rem;
+  border: 3px solid;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.risk-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.risk-value {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
