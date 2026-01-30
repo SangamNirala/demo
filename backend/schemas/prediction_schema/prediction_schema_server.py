@@ -138,7 +138,7 @@ class PredictionSchemaServer:
         """Get severity level from risk percentage"""
         if risk_percentage >= 80:
             return 'critical'
-        elif risk_percentage >= 70:
+        elif risk_percentage >= 60:
             return 'high'
         elif risk_percentage >= 50:
             return 'moderate'

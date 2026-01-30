@@ -31,7 +31,7 @@ DEBUG = True
 CORS_ORIGINS = ['http://localhost:5173', 'http://localhost:3000']
 
 # Risk thresholds
-HIGH_RISK_THRESHOLD = 70
+HIGH_RISK_THRESHOLD = 60
 MEDIUM_RISK_THRESHOLD = 40
 
 # API configuration

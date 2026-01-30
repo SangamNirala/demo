@@ -44,7 +44,7 @@ class PredictConfig:
     METADATA_PATH = os.path.join(SAVED_MODELS_PATH, 'training_metadata.pkl')
 
     # Risk level thresholds
-    HIGH_RISK_THRESHOLD = 70
+    HIGH_RISK_THRESHOLD = 60
     MEDIUM_RISK_THRESHOLD = 40
 
 
