@@ -2,14 +2,15 @@
 Email Generation Service
 ========================
 
-This module generates personalized emails using Gemini AI for student outreach.
+This module generates personalized emails using Gemini AI via Emergent LLM integration for student outreach.
 """
 
 import os
 import json
-import requests
+import asyncio
 from typing import Dict, Optional
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 load_dotenv()
 
@@ -18,16 +19,16 @@ class EmailGenerationService:
     """Service for generating AI-powered personalized emails"""
     
     def __init__(self):
-        """Initialize email generation service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize email generation service with Emergent LLM key"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found - Email generation unavailable")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found - Email generation unavailable")
         else:
-            print(f"✅ Email Generation Service initialized with {self.model_name}")
+            print(f"✅ Email Generation Service initialized with {self.model_name} via Emergent LLM")
 
     def generate_email(
         self,
