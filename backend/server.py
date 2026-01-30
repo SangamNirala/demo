@@ -17,32 +17,26 @@ from flask_cors import CORS
 import json
 import os
 import sys
+import traceback
 
 # Add the backend directory to Python path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Import server handlers
-from routes.student_routes.student_routes_server import student_handler
-from routes.prediction_routes.prediction_routes_server import prediction_handler
-from services.student_service.student_service_server import student_service_server
-from services.prediction_service.prediction_service_server import prediction_service_server
+# Import ML predictor directly
+from ml.predict import DropoutPredictor
 
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
-# ============================================================================
-# STARTUP
-# ============================================================================
-
+# Initialize predictor
 print("\n" + "="*60)
 print("🚀 Starting Student Dropout Prediction System")
 print("="*60)
 
-# Check if ML model is loaded
-model_status = prediction_service_server.get_service_status()
+predictor = DropoutPredictor()
 
-if model_status.get('model_loaded'):
+if predictor.is_loaded:
     print("\n✅ ML Model loaded successfully!")
     print("   System ready to make predictions.")
 else:
@@ -51,6 +45,24 @@ else:
     print("   Please ensure model files exist in backend/ml/saved_models/")
 
 print("\n" + "="*60 + "\n")
+
+# ============================================================================
+# HELPER FUNCTIONS
+# ============================================================================
+
+def load_students():
+    """Load student data from JSON file"""
+    db_path = os.path.join(os.path.dirname(__file__), 'database', 'students_data.json')
+    try:
+        with open(db_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data
+    except FileNotFoundError:
+        print(f"❌ Error: Student database not found at {db_path}")
+        return {'students': {}}
+    except json.JSONDecodeError:
+        print(f"❌ Error: Invalid JSON in student database")
+        return {'students': {}}
 
 # ============================================================================
 # API ROUTES
@@ -65,18 +77,20 @@ def health_check():
         JSON with server status and model loading status
     """
     try:
-        service_status = prediction_service_server.get_service_status()
-        
+        model_loaded = False
+        try:
+            model_loaded = predictor.is_loaded
+        except Exception as pred_error:
+            print(f"Error checking predictor: {pred_error}")
+            
         return jsonify({
             'status': 'healthy',
             'message': 'Server is running',
-            'model_loaded': service_status.get('model_loaded', False),
-            'service_info': {
-                'cache_size': service_status.get('cache_size', 0),
-                'model_type': service_status.get('model_info', {}).get('model_type', 'Unknown')
-            }
+            'model_loaded': model_loaded
         }), 200
     except Exception as e:
+        print(f"Error in health check: {e}")
+        traceback.print_exc()
         return jsonify({
             'status': 'error',
             'message': f'Health check failed: {str(e)}'
@@ -95,11 +109,17 @@ def get_student(roll_no):
         JSON with student data
     """
     try:
-        # Use the student handler
-        response_data, status_code = student_handler.get_student_handler(roll_no)
-        return jsonify(response_data), status_code
+        students_data = load_students()
+        students = students_data.get('students', {})
         
+        if roll_no in students:
+            return jsonify(students[roll_no]), 200
+        else:
+            return jsonify({'error': 'Student not found'}), 404
+            
     except Exception as e:
+        print(f"Error in get_student: {e}")
+        traceback.print_exc()
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 
@@ -115,19 +135,27 @@ def list_students():
         JSON with list of all students
     """
     try:
-        # Check if search query is provided
-        search_query = request.args.get('search', None)
+        students_data = load_students()
+        students = students_data.get('students', {})
         
-        if search_query:
-            # Use search handler
-            response_data, status_code = student_handler.search_students_handler(search_query)
-        else:
-            # Use list handler
-            response_data, status_code = student_handler.list_students_handler()
+        student_list = [
+            {
+                'roll_no': roll_no,
+                'name': data.get('name', 'Unknown'),
+                'course': data.get('course', 'N/A'),
+                'year': data.get('year', 'N/A')
+            }
+            for roll_no, data in students.items()
+        ]
         
-        return jsonify(response_data), status_code
+        return jsonify({
+            'total': len(student_list),
+            'students': student_list
+        }), 200
         
     except Exception as e:
+        print(f"Error in list_students: {e}")
+        traceback.print_exc()
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 
@@ -143,60 +171,29 @@ def predict_dropout(roll_no):
         JSON with prediction results
     """
     try:
-        # Use the prediction handler
-        response_data, status_code = prediction_handler.predict_dropout_handler(roll_no)
-        return jsonify(response_data), status_code
+        students_data = load_students()
+        students = students_data.get('students', {})
+        
+        if roll_no not in students:
+            return jsonify({'error': 'Student not found'}), 404
+        
+        student_data = students[roll_no]
+        
+        # Make prediction using ML model
+        prediction = predictor.predict(student_data)
+        
+        if prediction.get('error'):
+            return jsonify(prediction), 500
+        
+        return jsonify(prediction), 200
         
     except Exception as e:
-        import traceback
+        print(f"Error in predict_dropout: {e}")
+        traceback.print_exc()
         return jsonify({
             'error': f'Prediction failed: {str(e)}',
             'traceback': traceback.format_exc()
         }), 500
-
-
-@app.route('/api/model/info', methods=['GET'])
-def get_model_info():
-    """
-    Get ML model information
-    
-    Returns:
-        JSON with model information
-    """
-    try:
-        response_data, status_code = prediction_handler.get_model_info_handler()
-        return jsonify(response_data), status_code
-        
-    except Exception as e:
-        return jsonify({'error': f'Server error: {str(e)}'}), 500
-
-
-@app.route('/api/cache/clear', methods=['POST'])
-def clear_cache():
-    """
-    Clear prediction cache
-    
-    Request Body (optional):
-        roll_no: Specific roll number to clear
-        
-    Returns:
-        JSON with success message
-    """
-    try:
-        data = request.get_json() or {}
-        roll_no = data.get('roll_no', None)
-        
-        prediction_service_server.clear_cache(roll_no)
-        
-        message = f"Cache cleared for {roll_no}" if roll_no else "All cache cleared"
-        
-        return jsonify({
-            'success': True,
-            'message': message
-        }), 200
-        
-    except Exception as e:
-        return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 
 # ============================================================================
@@ -242,10 +239,7 @@ if __name__ == '__main__':
     print("  GET  /api/health              - Health check")
     print("  GET  /api/student/<roll_no>   - Get student data")
     print("  GET  /api/students            - List all students")
-    print("  GET  /api/students?search=... - Search students")
     print("  POST /api/predict/<roll_no>   - Get dropout prediction")
-    print("  GET  /api/model/info          - Get model information")
-    print("  POST /api/cache/clear         - Clear prediction cache")
     print("\n" + "="*60 + "\n")
     
     app.run(host='0.0.0.0', port=8000, debug=True)
