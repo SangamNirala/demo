@@ -4,13 +4,15 @@ Chatbot Service Module
 
 This module provides an AI-powered chatbot for faculty/admin to ask questions
 about students, get insights, and receive guidance.
+Uses Emergent LLM key via emergentintegrations library.
 """
 
 import os
 import json
 from typing import Dict, List, Optional
-import requests
+import asyncio
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 # Load environment variables from backend/.env
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -20,22 +22,23 @@ load_dotenv(env_path)
 
 
 class ChatbotService:
-    """Service for AI-powered faculty/admin chatbot"""
+    """Service for AI-powered faculty/admin chatbot using Emergent LLM key"""
     
     def __init__(self):
-        """Initialize chatbot service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize chatbot service with emergentintegrations"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         # Conversation history (in-memory, can be moved to database)
         self.conversation_history = {}
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found for chatbot")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found for chatbot")
         else:
-            print(f"✅ Chatbot service initialized with {self.model_name}")
+            print(f"✅ Chatbot service initialized with emergentintegrations using {self.model_name}")
+            print(f"   Using Emergent LLM key for chatbot")
     
     def chat(
         self,
@@ -69,11 +72,11 @@ class ChatbotService:
             # Get conversation history for this session
             history = self.conversation_history.get(session_id, [])
             
-            # Build the prompt
-            prompt = self._build_prompt(user_message, context, history)
+            # Build the system message with context
+            system_message = self._build_system_message(context)
             
-            # Call Gemini API
-            response_text = self._call_gemini_api(prompt)
+            # Call emergentintegrations API
+            response_text = self._call_llm_api(user_message, system_message, session_id)
             
             # Update conversation history
             history.append({
@@ -114,16 +117,16 @@ class ChatbotService:
     def _build_context(self, student_data: Dict, prediction_data: Dict) -> str:
         """Build context string with student information"""
         
-        # Extract student info
+        # Extract student info (handle both snake_case and camelCase)
         name = student_data.get('name', 'Unknown')
-        roll_no = student_data.get('roll_no', 'N/A')
+        roll_no = student_data.get('roll_no', student_data.get('rollNo', 'N/A'))
         course = student_data.get('course', 'N/A')
         year = student_data.get('year_string', student_data.get('year', 'N/A'))
         
-        # Extract prediction info
-        risk_level = prediction_data.get('risk_level', 'UNKNOWN')
-        risk_percentage = prediction_data.get('risk_percentage', 0)
-        risk_factors = prediction_data.get('risk_factors', [])
+        # Extract prediction info (handle both snake_case and camelCase)
+        risk_level = prediction_data.get('riskLevel', prediction_data.get('risk_level', 'UNKNOWN'))
+        risk_percentage = prediction_data.get('riskPercentage', prediction_data.get('risk_percentage', 0))
+        risk_factors = prediction_data.get('riskFactors', prediction_data.get('risk_factors', []))
         recommendations = prediction_data.get('recommendations', [])
         
         # Build context
@@ -141,113 +144,117 @@ TOP RISK FACTORS:
 """
         
         for rf in risk_factors[:5]:
-            context += f"- {rf.get('name', 'Unknown')} ({rf.get('contribution', 0)}%): {rf.get('description', '')}\n"
+            factor_name = rf.get('name', rf.get('factor', 'Unknown'))
+            contribution = rf.get('contribution', 0)
+            description = rf.get('description', '')
+            context += f"- {factor_name} ({contribution}%): {description}\n"
         
         context += "\nSTUDENT METRICS:\n"
         
-        # Add relevant metrics
+        # Add relevant metrics (handle both formats)
         metrics = [
-            ('Attendance', student_data.get('attendance_percentage')),
-            ('CGPA Current', student_data.get('cgpa_current', student_data.get('cgpa_semester2'))),
-            ('CGPA Previous', student_data.get('cgpa_previous', student_data.get('cgpa_semester1'))),
-            ('Assignment Submission Rate', student_data.get('assignment_submission_rate')),
-            ('Library Visits (monthly)', student_data.get('library_visits_monthly')),
-            ('LMS Last Login (days ago)', student_data.get('lms_last_login_days')),
-            ('Fee Payment Delay (months)', student_data.get('fee_payment_delay_months')),
-            ('Counselor Visits', student_data.get('counselor_visits')),
-            ('Family Income', student_data.get('family_income')),
+            ('Attendance', student_data.get('attendance', student_data.get('attendance_percentage'))),
+            ('CGPA Current', student_data.get('currentCGPA', student_data.get('cgpa_current', student_data.get('cgpa_semester2')))),
+            ('CGPA Previous', student_data.get('previousCGPA', student_data.get('cgpa_previous', student_data.get('cgpa_semester1')))),
+            ('Assignment Submission Rate', student_data.get('assignmentsSubmitted', student_data.get('assignment_submission_rate'))),
+            ('Library Visits (monthly)', student_data.get('libraryVisits', student_data.get('library_visits_monthly'))),
+            ('LMS Last Login (days ago)', student_data.get('lastLMSLogin', student_data.get('lms_last_login_days'))),
+            ('Fee Payment Delay (months)', student_data.get('feePaymentDelay', student_data.get('fee_payment_delay_months'))),
+            ('Fee Status', student_data.get('feeStatus', student_data.get('fee_status'))),
+            ('Counselor Visits', student_data.get('counselorVisits', student_data.get('counselor_visits'))),
+            ('Family Income', student_data.get('familyIncome', student_data.get('family_income'))),
+            ('Parent Education', student_data.get('parentEducation', student_data.get('parent_education'))),
+            ('Accommodation', student_data.get('accommodation')),
+            ('Distance from College', student_data.get('distanceFromCollege', student_data.get('distance_from_college'))),
+            ('Extracurricular Activities', student_data.get('extracurricular')),
         ]
         
         for metric_name, value in metrics:
-            if value is not None:
+            if value is not None and value != '':
                 context += f"- {metric_name}: {value}\n"
         
         context += "\nRECOMMENDED INTERVENTIONS:\n"
         for idx, rec in enumerate(recommendations[:5], 1):
-            context += f"{idx}. {rec.get('title', 'Unknown')} (Priority: {rec.get('priority', 'medium')})\n"
+            title = rec.get('title', 'Unknown')
+            priority = rec.get('priority', 'medium')
+            description = rec.get('description', '')
+            context += f"{idx}. **{title}** (Priority: {priority})\n   {description}\n"
         
         return context
     
-    def _build_prompt(self, user_message: str, context: str, history: List[Dict]) -> str:
-        """Build the prompt for Gemini API"""
+    def _build_system_message(self, context: str) -> str:
+        """Build the system message for emergentintegrations"""
         
-        system_prompt = """You are an expert educational counselor and student success advisor AI assistant. You help faculty and administrators understand student risk factors, provide actionable guidance, and answer questions about student performance and interventions.
+        system_prompt = f"""You are an expert educational counselor and student success advisor AI assistant. You help faculty and administrators understand student risk factors, provide actionable guidance, and answer questions about student performance and interventions.
+
+IMPORTANT: You have access to COMPLETE student data including:
+- Full student profile (name, roll number, course, year)
+- Risk assessment (risk level and percentage)
+- All risk factors with their contributions
+- Complete student metrics (attendance, CGPA, library visits, LMS activity, fee status, etc.)
+- Recommended interventions with priorities
 
 GUIDELINES:
-1. Be professional, empathetic, and solution-focused
-2. Provide specific, actionable advice based on the student data
-3. Reference specific metrics and risk factors when explaining
-4. Suggest concrete next steps when asked for guidance
-5. Be concise but thorough (2-4 paragraphs maximum)
-6. Use bullet points for lists and action items
-7. Maintain student privacy and confidentiality
-8. If asked to compare, use the data provided to make meaningful comparisons
+1. **Always reference the specific data provided** - never say "unknown" or "not provided" when the data is in the context
+2. Be professional, empathetic, and solution-focused
+3. Provide specific, actionable advice based on the student data
+4. Reference specific metrics and risk factors when explaining
+5. Suggest concrete next steps when asked for guidance
+6. Be concise but thorough (2-4 paragraphs maximum)
+7. Use bullet points for lists and action items
+8. Maintain student privacy and confidentiality
+9. If asked about risk level, ALWAYS check the RISK ASSESSMENT section first
+10. When explaining "why" questions, cite specific risk factors and their contributions
 
 RESPONSE FORMAT:
 - Use clear paragraphs for explanations
 - Use bullet points (•) for lists
 - Use **bold** for important terms and actions
 - Keep responses focused and actionable
-"""
-        
-        # Build conversation history
-        history_text = ""
-        if history:
-            history_text = "\n\nCONVERSATION HISTORY:\n"
-            for msg in history[-6:]:  # Last 3 exchanges
-                role = "Faculty" if msg['role'] == 'user' else "Assistant"
-                history_text += f"{role}: {msg['message']}\n"
-        
-        # Build full prompt
-        prompt = f"""{system_prompt}
+- Always cite specific numbers and metrics from the data
 
+EXAMPLE RESPONSES:
+- When asked "Why is the student at high risk?": Reference the specific risk level, percentage, and top contributing factors
+- When asked "What should I do first?": Prioritize based on the recommended interventions and their priority levels
+- When asked about metrics: Cite the exact values from the student metrics section
+
+CURRENT STUDENT CONTEXT:
 {context}
-{history_text}
 
-FACULTY QUESTION:
-{user_message}
-
-Please provide a helpful, specific response based on the student data above. Be direct and actionable."""
-        
-        return prompt
+Remember: All the information you need is in the CURRENT STUDENT CONTEXT above. Use it to provide accurate, data-driven responses."""
+        return system_prompt
     
-    def _call_gemini_api(self, prompt: str) -> str:
-        """Call Gemini API with the prompt"""
+    def _call_llm_api(self, user_message: str, system_message: str, session_id: str) -> str:
+        """Call emergentintegrations LLM API"""
         
-        headers = {
-            'Content-Type': 'application/json',
-        }
-        
-        payload = {
-            "contents": [{
-                "parts": [{
-                    "text": prompt
-                }]
-            }],
-            "generationConfig": {
-                "temperature": 0.7,
-                "topK": 40,
-                "topP": 0.95,
-                "maxOutputTokens": 2048,  # Increased for longer responses
-            }
-        }
-        
-        url = f"{self.api_url}?key={self.api_key}"
-        
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        response.raise_for_status()
-        
-        result = response.json()
-        
-        # Extract text from response
-        if 'candidates' in result and len(result['candidates']) > 0:
-            candidate = result['candidates'][0]
-            if 'content' in candidate and 'parts' in candidate['content']:
-                parts = candidate['content']['parts']
-                if len(parts) > 0 and 'text' in parts[0]:
-                    return parts[0]['text']
-        
-        raise Exception("Invalid response format from Gemini API")
+        try:
+            # Create LlmChat instance with system message
+            chat = LlmChat(
+                api_key=self.api_key,
+                session_id=session_id,
+                system_message=system_message
+            )
+            
+            # Configure to use Gemini model
+            chat.with_model(self.provider, self.model_name)
+            
+            # Create user message
+            message = UserMessage(text=user_message)
+            
+            # Send message and get response (sync wrapper for async)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                response = loop.run_until_complete(chat.send_message(message))
+                return response
+            finally:
+                loop.close()
+                
+        except Exception as e:
+            print(f"❌ Error calling emergentintegrations API: {e}")
+            import traceback
+            traceback.print_exc()
+            raise
 
 
 # Singleton instance

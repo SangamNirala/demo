@@ -2,14 +2,15 @@
 Email Generation Service
 ========================
 
-This module generates personalized emails using Gemini AI for student outreach.
+This module generates personalized emails using Gemini AI via Emergent LLM integration for student outreach.
 """
 
 import os
 import json
-import requests
+import asyncio
 from typing import Dict, Optional
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 load_dotenv()
 
@@ -18,16 +19,16 @@ class EmailGenerationService:
     """Service for generating AI-powered personalized emails"""
     
     def __init__(self):
-        """Initialize email generation service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize email generation service with Emergent LLM key"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found - Email generation unavailable")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found - Email generation unavailable")
         else:
-            print(f"✅ Email Generation Service initialized with {self.model_name}")
+            print(f"✅ Email Generation Service initialized with {self.model_name} via Emergent LLM")
 
     def generate_email(
         self,
@@ -38,7 +39,7 @@ class EmailGenerationService:
         meeting_details: Optional[Dict] = None
     ) -> Dict:
         """
-        Generate personalized email using Gemini AI
+        Generate personalized email using Gemini AI via Emergent LLM
         
         Args:
             email_type: Type of email (student, parent, meeting)
@@ -52,7 +53,7 @@ class EmailGenerationService:
         """
         
         if not self.is_available:
-            raise Exception("Email generation service is not available. Please configure GEMINI_API_KEY.")
+            raise Exception("Email generation service is not available. Please configure EMERGENT_LLM_KEY.")
         
         try:
             prompt = self._build_email_prompt(
@@ -209,34 +210,35 @@ Return ONLY valid JSON with this structure:
 IMPORTANT: Return ONLY the JSON object, no additional text."""
 
     def _call_gemini_api(self, prompt: str) -> str:
-        """Call Gemini API"""
+        """Call Gemini API using Emergent LLM integration"""
         
-        headers = {'Content-Type': 'application/json'}
-        
-        payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {
-                "temperature": 0.8,
-                "topK": 40,
-                "topP": 0.95,
-                "maxOutputTokens": 1500
-            }
-        }
-        
-        url = f"{self.api_url}?key={self.api_key}"
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        response.raise_for_status()
-        
-        result = response.json()
-        
-        if 'candidates' in result and len(result['candidates']) > 0:
-            candidate = result['candidates'][0]
-            if 'content' in candidate and 'parts' in candidate['content']:
-                parts = candidate['content']['parts']
-                if len(parts) > 0 and 'text' in parts[0]:
-                    return parts[0]['text']
-        
-        raise Exception("Invalid response format from Gemini API")
+        try:
+            # Create a unique session ID for this request
+            session_id = f"email_{hash(prompt) % 1000000}"
+            
+            # Initialize LlmChat with Emergent key
+            chat = LlmChat(
+                api_key=self.api_key,
+                session_id=session_id,
+                system_message="You are an expert at writing professional, empathetic emails for educational institutions."
+            ).with_model(self.provider, self.model_name)
+            
+            # Create user message
+            user_message = UserMessage(text=prompt)
+            
+            # Send message and get response (run async in sync context)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                response = loop.run_until_complete(chat.send_message(user_message))
+            finally:
+                loop.close()
+            
+            return response
+            
+        except Exception as e:
+            print(f"❌ Error calling Gemini API via Emergent: {e}")
+            raise Exception(f"Failed to call Gemini API: {e}")
 
     def _parse_response(self, response_text: str) -> Dict:
         """Parse Gemini's JSON response with robust error handling"""

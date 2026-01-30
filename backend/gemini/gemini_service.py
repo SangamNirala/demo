@@ -3,14 +3,15 @@ Gemini Service Module
 =====================
 
 This module provides AI-powered personalized intervention recommendations
-using Google's Gemini API.
+using Google's Gemini API via Emergent LLM integration.
 """
 
 import os
 import json
 from typing import Dict, List, Optional
-import requests
+import asyncio
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 # Load environment variables
 load_dotenv()
@@ -20,18 +21,18 @@ class GeminiService:
     """Service for generating personalized recommendations using Gemini AI"""
     
     def __init__(self):
-        """Initialize Gemini service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize Gemini service with Emergent LLM key"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         # Using Gemini 2.5 Flash model
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found in environment variables")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found in environment variables")
             print("   Falling back to static recommendations")
         else:
-            print(f"✅ Gemini AI service initialized with {self.model_name}")
+            print(f"✅ Gemini AI service initialized with {self.model_name} via Emergent LLM")
     
     def generate_personalized_recommendations(
         self,
@@ -194,43 +195,35 @@ IMPORTANT:
         return prompt
     
     def _call_gemini_api(self, prompt: str) -> str:
-        """Call Gemini API with the prompt"""
+        """Call Gemini API using Emergent LLM integration"""
         
-        headers = {
-            'Content-Type': 'application/json',
-        }
-        
-        payload = {
-            "contents": [{
-                "parts": [{
-                    "text": prompt
-                }]
-            }],
-            "generationConfig": {
-                "temperature": 0.7,
-                "topK": 40,
-                "topP": 0.95,
-                "maxOutputTokens": 3000,  # Increased for longer responses
-                "response_mime_type": "application/json"  # Request JSON response
-            }
-        }
-        
-        url = f"{self.api_url}?key={self.api_key}"
-        
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        response.raise_for_status()
-        
-        result = response.json()
-        
-        # Extract text from response
-        if 'candidates' in result and len(result['candidates']) > 0:
-            candidate = result['candidates'][0]
-            if 'content' in candidate and 'parts' in candidate['content']:
-                parts = candidate['content']['parts']
-                if len(parts) > 0 and 'text' in parts[0]:
-                    return parts[0]['text']
-        
-        raise Exception("Invalid response format from Gemini API")
+        try:
+            # Create a unique session ID for this request
+            session_id = f"recommendation_{hash(prompt) % 1000000}"
+            
+            # Initialize LlmChat with Emergent key
+            chat = LlmChat(
+                api_key=self.api_key,
+                session_id=session_id,
+                system_message="You are an expert educational counselor and student success advisor."
+            ).with_model(self.provider, self.model_name)
+            
+            # Create user message
+            user_message = UserMessage(text=prompt)
+            
+            # Send message and get response (run async in sync context)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                response = loop.run_until_complete(chat.send_message(user_message))
+            finally:
+                loop.close()
+            
+            return response
+            
+        except Exception as e:
+            print(f"❌ Error calling Gemini API via Emergent: {e}")
+            raise Exception(f"Failed to call Gemini API: {e}")
     
     def _parse_gemini_response(self, response_text: str, risk_level: str) -> List[Dict]:
         """Parse Gemini's response and format recommendations"""
