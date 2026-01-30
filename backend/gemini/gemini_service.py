@@ -195,43 +195,35 @@ IMPORTANT:
         return prompt
     
     def _call_gemini_api(self, prompt: str) -> str:
-        """Call Gemini API with the prompt"""
+        """Call Gemini API using Emergent LLM integration"""
         
-        headers = {
-            'Content-Type': 'application/json',
-        }
-        
-        payload = {
-            "contents": [{
-                "parts": [{
-                    "text": prompt
-                }]
-            }],
-            "generationConfig": {
-                "temperature": 0.7,
-                "topK": 40,
-                "topP": 0.95,
-                "maxOutputTokens": 3000,  # Increased for longer responses
-                "response_mime_type": "application/json"  # Request JSON response
-            }
-        }
-        
-        url = f"{self.api_url}?key={self.api_key}"
-        
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        response.raise_for_status()
-        
-        result = response.json()
-        
-        # Extract text from response
-        if 'candidates' in result and len(result['candidates']) > 0:
-            candidate = result['candidates'][0]
-            if 'content' in candidate and 'parts' in candidate['content']:
-                parts = candidate['content']['parts']
-                if len(parts) > 0 and 'text' in parts[0]:
-                    return parts[0]['text']
-        
-        raise Exception("Invalid response format from Gemini API")
+        try:
+            # Create a unique session ID for this request
+            session_id = f"recommendation_{hash(prompt) % 1000000}"
+            
+            # Initialize LlmChat with Emergent key
+            chat = LlmChat(
+                api_key=self.api_key,
+                session_id=session_id,
+                system_message="You are an expert educational counselor and student success advisor."
+            ).with_model(self.provider, self.model_name)
+            
+            # Create user message
+            user_message = UserMessage(text=prompt)
+            
+            # Send message and get response (run async in sync context)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                response = loop.run_until_complete(chat.send_message(user_message))
+            finally:
+                loop.close()
+            
+            return response
+            
+        except Exception as e:
+            print(f"❌ Error calling Gemini API via Emergent: {e}")
+            raise Exception(f"Failed to call Gemini API: {e}")
     
     def _parse_gemini_response(self, response_text: str, risk_level: str) -> List[Dict]:
         """Parse Gemini's response and format recommendations"""
