@@ -72,11 +72,11 @@ class ChatbotService:
             # Get conversation history for this session
             history = self.conversation_history.get(session_id, [])
             
-            # Build the prompt
-            prompt = self._build_prompt(user_message, context, history)
+            # Build the system message with context
+            system_message = self._build_system_message(context)
             
-            # Call Gemini API
-            response_text = self._call_gemini_api(prompt)
+            # Call emergentintegrations API
+            response_text = self._call_llm_api(user_message, system_message, session_id)
             
             # Update conversation history
             history.append({
