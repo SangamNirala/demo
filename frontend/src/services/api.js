@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+// Use relative URLs to leverage Vite's proxy configuration
+// The proxy will forward /api requests to the backend server
+const API_URL = '';
 
 export const getStudentData = async (rollNo) => {
   try {
