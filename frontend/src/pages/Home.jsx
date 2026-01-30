@@ -7,6 +7,7 @@ import RiskAlertCard from '../components/RiskAlertCard';
 import RiskFactorsCard from '../components/RiskFactorsCard';
 import RecommendationsCard from '../components/RecommendationsCard';
 import ChatbotCard from '../components/ChatbotCard';
+import DownloadReportButton from '../components/DownloadReportButton';
 import Loader from '../components/Loader';
 import { getStudentData, getPrediction } from '../services/api';
 import '../styles/global.css';
@@ -82,6 +83,11 @@ const Home = () => {
           <RiskAlertCard data={predictionData} studentData={studentData} />
           <RiskFactorsCard factors={predictionData.riskFactors} />
           <RecommendationsCard recommendations={predictionData.recommendations} />
+          <DownloadReportButton 
+            studentData={studentData} 
+            predictionData={predictionData}
+            rollNo={studentData.roll_no || studentData.rollNo}
+          />
           <ChatbotCard studentData={studentData} predictionData={predictionData} />
         </div>
       )}

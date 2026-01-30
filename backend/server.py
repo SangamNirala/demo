@@ -28,12 +28,16 @@ from services.prediction_service.prediction_service import PredictionService
 # Import chatbot routes
 from gemini.chatbot.chatbot_routes import chatbot_bp
 
+# Import PDF report routes
+from gemini.pdf_generation.pdf_routes import pdf_bp
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
-# Register chatbot blueprint
+# Register blueprints
 app.register_blueprint(chatbot_bp)
+app.register_blueprint(pdf_bp)
 
 # Initialize prediction service with Gemini AI enabled
 print("\n" + "="*60)
@@ -249,10 +253,12 @@ if __name__ == '__main__':
     print("🌐 Server starting on http://localhost:8001")
     print("="*60)
     print("\nAvailable endpoints:")
-    print("  GET  /api/health              - Health check")
-    print("  GET  /api/student/<roll_no>   - Get student data")
-    print("  GET  /api/students            - List all students")
-    print("  POST /api/predict/<roll_no>   - Get dropout prediction")
+    print("  GET  /api/health                    - Health check")
+    print("  GET  /api/student/<roll_no>         - Get student data")
+    print("  GET  /api/students                  - List all students")
+    print("  POST /api/predict/<roll_no>         - Get dropout prediction")
+    print("  POST /api/chatbot/chat              - Chatbot conversation")
+    print("  POST /api/pdf/generate/<roll_no>    - Generate PDF report")
     print("\n" + "="*60 + "\n")
     
     app.run(host='0.0.0.0', port=8001, debug=True)
