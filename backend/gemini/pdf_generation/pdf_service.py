@@ -3,16 +3,17 @@ PDF Report Service
 ==================
 
 This module generates comprehensive PDF reports for student dropout risk assessments
-using Gemini AI for enhanced content generation and ReportLab for PDF creation.
+using Gemini AI via Emergent LLM integration for enhanced content generation and ReportLab for PDF creation.
 """
 
 import os
 import json
 import io
+import asyncio
 from datetime import datetime
 from typing import Dict, List, Optional
-import requests
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 # ReportLab imports
 from reportlab.lib.pagesizes import A4, letter
@@ -39,16 +40,16 @@ class PDFReportService:
     """Service for generating AI-powered PDF reports"""
     
     def __init__(self):
-        """Initialize PDF report service"""
-        self.api_key = os.getenv('GEMINI_API_KEY')
+        """Initialize PDF report service with Emergent LLM key"""
+        self.api_key = os.getenv('EMERGENT_LLM_KEY')
         self.model_name = "gemini-2.5-flash"
-        self.api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model_name}:generateContent"
+        self.provider = "gemini"
         self.is_available = bool(self.api_key)
         
         if not self.is_available:
-            print("⚠️  Warning: GEMINI_API_KEY not found - PDF reports will use basic content")
+            print("⚠️  Warning: EMERGENT_LLM_KEY not found - PDF reports will use basic content")
         else:
-            print(f"✅ PDF Report Service initialized with {self.model_name}")
+            print(f"✅ PDF Report Service initialized with {self.model_name} via Emergent LLM")
 
     
     def generate_report(
