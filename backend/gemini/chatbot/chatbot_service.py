@@ -228,7 +228,7 @@ Please provide a helpful, specific response based on the student data above. Be 
                 "temperature": 0.7,
                 "topK": 40,
                 "topP": 0.95,
-                "maxOutputTokens": 1024,
+                "maxOutputTokens": 2048,  # Increased for longer responses
             }
         }
         

@@ -58,6 +58,9 @@ const ChatbotCard = ({ studentData, predictionData }) => {
         throw new Error(data.message || 'Failed to get response');
       }
 
+      console.log('📨 Chatbot response received:', data.response);
+      console.log('📏 Response length:', data.response?.length);
+
       // Add assistant message to chat
       const assistantMessage = {
         role: 'assistant',
@@ -109,48 +112,52 @@ const ChatbotCard = ({ studentData, predictionData }) => {
   const formatMessage = (content) => {
     if (!content) return null;
 
-    // Split by newlines
+    // Split by newlines and filter empty lines
     const lines = content.split('\n').filter(line => line.trim());
 
-    return lines.map((line, idx) => {
-      // Check if line is a bullet point
-      const isBullet = line.trim().startsWith('•') || line.trim().startsWith('-') || line.trim().startsWith('*');
-      
-      // Remove bullet character
-      let text = line.replace(/^[•\-*]\s*/, '').trim();
+    return (
+      <div className="message-formatted">
+        {lines.map((line, idx) => {
+          // Check if line is a bullet point
+          const isBullet = line.trim().startsWith('•') || line.trim().startsWith('-') || line.trim().startsWith('*');
+          
+          // Remove bullet character
+          let text = line.replace(/^[•\-*]\s*/, '').trim();
 
-      // Convert **bold** to <strong> tags
-      const parts = [];
-      let lastIndex = 0;
-      const boldRegex = /\*\*([^*]+)\*\*/g;
-      let match;
+          // Convert **bold** to <strong> tags
+          const parts = [];
+          let lastIndex = 0;
+          const boldRegex = /\*\*([^*]+)\*\*/g;
+          let match;
 
-      while ((match = boldRegex.exec(text)) !== null) {
-        if (match.index > lastIndex) {
-          parts.push(text.substring(lastIndex, match.index));
-        }
-        parts.push(<strong key={`bold-${idx}-${match.index}`}>{match[1]}</strong>);
-        lastIndex = match.index + match[0].length;
-      }
+          while ((match = boldRegex.exec(text)) !== null) {
+            if (match.index > lastIndex) {
+              parts.push(text.substring(lastIndex, match.index));
+            }
+            parts.push(<strong key={`bold-${idx}-${match.index}`}>{match[1]}</strong>);
+            lastIndex = match.index + match[0].length;
+          }
 
-      if (lastIndex < text.length) {
-        parts.push(text.substring(lastIndex));
-      }
+          if (lastIndex < text.length) {
+            parts.push(text.substring(lastIndex));
+          }
 
-      if (isBullet) {
-        return (
-          <li key={idx} className="chat-bullet">
-            {parts.length > 0 ? parts : text}
-          </li>
-        );
-      } else {
-        return (
-          <p key={idx} className="chat-paragraph">
-            {parts.length > 0 ? parts : text}
-          </p>
-        );
-      }
-    });
+          if (isBullet) {
+            return (
+              <li key={idx} className="chat-bullet">
+                {parts.length > 0 ? parts : text}
+              </li>
+            );
+          } else {
+            return (
+              <p key={idx} className="chat-paragraph">
+                {parts.length > 0 ? parts : text}
+              </p>
+            );
+          }
+        })}
+      </div>
+    );
   };
 
   return (

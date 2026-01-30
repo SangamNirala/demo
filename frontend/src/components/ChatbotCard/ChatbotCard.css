@@ -141,6 +141,12 @@
   padding: 0.75rem 1rem;
   border-radius: 12px;
   max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.message-formatted {
+  width: 100%;
 }
 
 .message.user .message-content {
@@ -162,6 +168,7 @@
 .chat-paragraph {
   margin: 0.5rem 0;
   line-height: 1.6;
+  white-space: pre-wrap;
 }
 
 .chat-paragraph:first-child {
@@ -176,6 +183,8 @@
   margin: 0.25rem 0;
   margin-left: 1.25rem;
   line-height: 1.5;
+  list-style-type: disc;
+  white-space: pre-wrap;
 }
 
 .message-content strong {
