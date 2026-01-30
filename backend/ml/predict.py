@@ -94,6 +94,12 @@ class DropoutPredictor:
                 print(f"❌ Error: Model file not found at {self.config.MODEL_PATH}")
                 self.is_loaded = False
                 return
+            
+            # Add ml directory to path for custom model classes
+            import sys
+            ml_dir = os.path.dirname(self.config.MODEL_PATH.replace('saved_models', ''))
+            if ml_dir not in sys.path:
+                sys.path.insert(0, ml_dir)
                 
             with open(self.config.MODEL_PATH, 'rb') as f:
                 self.model = pickle.load(f)
