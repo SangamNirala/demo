@@ -102,6 +102,7 @@ const Home = () => {
             rollNo={studentData.roll_no || studentData.rollNo} 
             currentRisk={predictionData.riskPercentage}
           />
+          <InterventionTrackerCard studentData={studentData} />
           <RiskFactorsCard factors={predictionData.riskFactors} />
           <RecommendationsCard recommendations={predictionData.recommendations} />
           <EmailGeneratorCard studentData={studentData} predictionData={predictionData} />
