@@ -10,6 +10,7 @@ import ChatbotCard from '../components/ChatbotCard';
 import DownloadReportButton from '../components/DownloadReportButton';
 import EmailGeneratorCard from '../components/EmailGeneratorCard';
 import TrendAnalysisCard from '../components/TrendAnalysisCard';
+import InterventionTrackerCard from '../components/InterventionTrackerCard';
 import Loader from '../components/Loader';
 import { getStudentData, getPrediction } from '../services/api';
 import '../styles/global.css';
