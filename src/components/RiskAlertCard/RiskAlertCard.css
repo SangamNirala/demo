@@ -1,0 +1,261 @@
+/* ========================================
+   RISK ALERT CARD - SIMPLIFIED
+   ======================================== */
+.risk-alert-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+/* Simple Header */
+.card-header-simple {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-icon-simple {
+  width: 24px;
+  height: 24px;
+  color: #dc2626;
+}
+
+.header-icon-simple svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card-header-simple h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Risk Content */
+.risk-content {
+  padding: 2rem 1.5rem;
+}
+
+.risk-level-card {
+  background: linear-gradient(135deg, rgba(255, 237, 213, 0.3), rgba(254, 243, 199, 0.3));
+  border-radius: 12px;
+  padding: 2rem;
+  border: 2px solid #fbbf24;
+}
+
+.risk-level-card.danger {
+  background: linear-gradient(135deg, rgba(254, 226, 226, 0.5), rgba(252, 231, 243, 0.3));
+  border-color: #ef4444;
+}
+
+.risk-level-card.warning {
+  background: linear-gradient(135deg, rgba(255, 237, 213, 0.5), rgba(254, 243, 199, 0.3));
+  border-color: #f59e0b;
+}
+
+.risk-level-card.good {
+  background: linear-gradient(135deg, rgba(220, 252, 231, 0.5), rgba(209, 250, 229, 0.3));
+  border-color: #10b981;
+}
+
+/* Risk Header */
+.risk-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.risk-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.risk-icon-wrapper.danger {
+  color: #ef4444;
+}
+
+.risk-icon-wrapper.warning {
+  color: #f59e0b;
+}
+
+.risk-icon-wrapper.good {
+  color: #10b981;
+}
+
+.risk-icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+}
+
+.risk-info {
+  flex: 1;
+}
+
+.risk-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.risk-status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.risk-status-badge.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.risk-status-badge.warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.risk-status-badge.good {
+  background: #10b981;
+  color: white;
+}
+
+/* Risk Body */
+.risk-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.risk-percentage-container {
+  text-align: center;
+}
+
+.risk-percentage {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.risk-percentage.danger {
+  color: #dc2626;
+}
+
+.risk-percentage.warning {
+  color: #d97706;
+}
+
+.risk-percentage.good {
+  color: #059669;
+}
+
+.percentage-unit {
+  font-size: 2.5rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.risk-description {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.risk-progress-container {
+  margin-top: 1rem;
+}
+
+.risk-progress-bar-container {
+  position: relative;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.risk-progress-bar-bg {
+  position: absolute;
+  inset: 0;
+  background: #e5e7eb;
+}
+
+.risk-progress-bar {
+  position: relative;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.8s ease;
+}
+
+.risk-progress-bar.danger {
+  background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+}
+
+.risk-progress-bar.warning {
+  background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+}
+
+.risk-progress-bar.good {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.risk-progress-bar-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.risk-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .risk-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .risk-level-card {
+    padding: 1.5rem;
+  }
+
+  .risk-percentage {
+    font-size: 3rem;
+  }
+
+  .percentage-unit {
+    font-size: 2rem;
+  }
+}

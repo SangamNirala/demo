@@ -1,0 +1,407 @@
+.trend-analysis-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.trend-header {
+  margin-bottom: 1.5rem;
+}
+
+.trend-header h2 {
+  font-size: 1.75rem;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.trend-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Loading State */
+.trend-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.trend-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+/* Error State */
+.trend-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: #fee2e2;
+  border-radius: 8px;
+  color: #991b1b;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+}
+
+/* Comparison Summary */
+.comparison-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+}
+
+.comparison-item {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.25rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.comparison-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.comparison-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.initial-value {
+  font-size: 1.25rem;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.current-value {
+  font-size: 1.5rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.arrow.improving {
+  color: #10b981;
+}
+
+.arrow.worsening,
+.arrow.declining {
+  color: #ef4444;
+}
+
+.comparison-change {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.comparison-change.improving {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.comparison-change.worsening,
+.comparison-change.declining {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Tabs */
+.trend-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  overflow-x: auto;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: #667eea;
+  background: #f3f4f6;
+}
+
+.tab-button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background: #f3f4f6;
+}
+
+/* Chart Container */
+.trend-content {
+  min-height: 400px;
+}
+
+.chart-container {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.chart-container h3 {
+  font-size: 1.25rem;
+  color: #374151;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+.chart-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
+}
+
+.insight-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.chart-insight p {
+  margin: 0;
+  color: #1e40af;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Custom Tooltip */
+.custom-tooltip {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.custom-tooltip .label {
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.custom-tooltip p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+/* Interventions Timeline */
+.interventions-container h3 {
+  font-size: 1.25rem;
+  color: #374151;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+.interventions-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intervention-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: #f9fafb;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.intervention-item:hover {
+  background: #f3f4f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.intervention-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+  padding-top: 0.25rem;
+}
+
+.intervention-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.intervention-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.intervention-icon {
+  font-size: 1.25rem;
+}
+
+.intervention-type {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.intervention-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-in_progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-scheduled {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.intervention-description {
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.intervention-outcome {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.outcome-positive {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.outcome-neutral {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.outcome-negative {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.no-interventions {
+  text-align: center;
+  padding: 3rem;
+  color: #9ca3af;
+}
+
+.no-interventions p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trend-analysis-card {
+    padding: 1.5rem;
+  }
+
+  .comparison-summary {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .trend-tabs {
+    gap: 0.25rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .intervention-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .intervention-date {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
