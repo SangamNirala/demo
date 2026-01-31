@@ -118,3 +118,109 @@ export const getTrendAnalysis = async (rollNo) => {
     return null;
   }
 };
+
+// ============================================================================
+// INTERVENTION API
+// ============================================================================
+
+export const createIntervention = async (interventionData) => {
+  try {
+    const response = await fetch(`${API_URL}/api/interventions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(interventionData),
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to create intervention');
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getStudentInterventions = async (studentId) => {
+  try {
+    const response = await fetch(`${API_URL}/api/interventions/student/${studentId}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch interventions');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching interventions:', error);
+    throw error;
+  }
+};
+
+export const updateIntervention = async (interventionId, updates) => {
+  try {
+    const response = await fetch(`${API_URL}/api/interventions/${interventionId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updates),
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to update intervention');
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteIntervention = async (interventionId) => {
+  try {
+    const response = await fetch(`${API_URL}/api/interventions/${interventionId}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to delete intervention');
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const markAsContacted = async (studentId, contactedBy, notes = '') => {
+  try {
+    const response = await fetch(`${API_URL}/api/interventions/mark-contacted`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        student_id: studentId,
+        contacted_by: contactedBy,
+        notes: notes,
+      }),
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to mark as contacted');
+    }
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getInterventionStatistics = async (studentId) => {
+  try {
+    const response = await fetch(`${API_URL}/api/interventions/statistics/${studentId}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch statistics');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching statistics:', error);
+    return null;
+  }
+};
