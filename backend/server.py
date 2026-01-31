@@ -274,6 +274,10 @@ if __name__ == '__main__':
     print("  POST /api/email/generate            - Generate personalized email")
     print("  GET  /api/trends/<roll_no>          - Get historical trends")
     print("  GET  /api/trends/<roll_no>/analysis - Get trend analysis")
+    print("  POST /api/interventions             - Create intervention")
+    print("  GET  /api/interventions/student/<id> - Get student interventions")
+    print("  PUT  /api/interventions/<id>        - Update intervention")
+    print("  POST /api/interventions/mark-contacted - Mark student as contacted")
     print("\n" + "="*60 + "\n")
     
     app.run(host='0.0.0.0', port=8001, debug=True)
