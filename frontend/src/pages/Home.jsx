@@ -54,8 +54,22 @@ const Home = () => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h1 style={styles.title}>🎓 Student Dropout Risk Prediction System</h1>
-        <p style={styles.subtitle}>Early intervention for better student outcomes</p>
+        <div style={styles.titleWrapper}>
+          <div style={{...styles.decorativeCorner, ...styles.cornerTopLeft}}></div>
+          <div style={{...styles.decorativeCorner, ...styles.cornerBottomRight}}></div>
+          <h1 style={styles.title}>
+            <span style={styles.titleIcon}>🎯</span>
+            <span style={styles.titleText}>Student Dropout Risk Prediction System</span>
+          </h1>
+        </div>
+        <p style={styles.subtitle}>
+          <span style={styles.subtitleIcon}>✨</span>
+          Early intervention for better student outcomes
+        </p>
+        <div style={styles.badge}>
+          <span style={styles.badgeIcon}>🤖</span>
+          Powered by AI & Machine Learning
+        </div>
       </div>
 
       <SearchSection onSearch={handleSearch} />
@@ -106,27 +120,112 @@ const styles = {
   },
   header: {
     textAlign: 'center',
-    marginBottom: '3.5rem',
+    marginBottom: '4rem',
     color: 'white',
     animation: 'fadeInDown 0.8s ease-out',
+    position: 'relative',
+  },
+  titleWrapper: {
+    position: 'relative',
+    display: 'inline-block',
+    padding: '2rem 3rem',
+    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
+    borderRadius: '24px',
+    border: '2px solid rgba(255, 255, 255, 0.2)',
+    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+    marginBottom: '1.5rem',
   },
   title: {
-    fontSize: 'clamp(1.8rem, 5vw, 3rem)',
-    fontWeight: '800',
-    marginBottom: '0.75rem',
-    textShadow: '0 4px 12px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2)',
-    letterSpacing: '-0.5px',
-    background: 'linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
+    fontSize: 'clamp(1.75rem, 4.5vw, 3.2rem)',
+    fontWeight: '900',
+    margin: 0,
+    textShadow: '0 4px 20px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.4), 0 0 40px rgba(102, 126, 234, 0.4)',
+    letterSpacing: '0.5px',
+    color: '#ffffff',
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '1rem',
+  },
+  titleIcon: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 'clamp(2.5rem, 5.5vw, 4rem)',
+    width: 'clamp(3.5rem, 7vw, 5rem)',
+    height: 'clamp(3.5rem, 7vw, 5rem)',
+    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)',
+    borderRadius: '20px',
+    border: '2px solid rgba(255, 255, 255, 0.3)',
+    boxShadow: '0 8px 32px rgba(102, 126, 234, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
+    filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))',
+    animation: 'iconFloat 3s ease-in-out infinite, iconGlow 2s ease-in-out infinite',
+    flexShrink: 0,
+  },
+  titleText: {
+    display: 'inline-block',
+  },
+  decorativeCorner: {
+    position: 'absolute',
+    width: '60px',
+    height: '60px',
+    border: '3px solid rgba(255, 255, 255, 0.2)',
+    borderRadius: '12px',
+  },
+  cornerTopLeft: {
+    top: '-15px',
+    left: '-15px',
+    borderRight: 'none',
+    borderBottom: 'none',
+    animation: 'cornerPulse 3s ease-in-out infinite',
+  },
+  cornerBottomRight: {
+    bottom: '-15px',
+    right: '-15px',
+    borderLeft: 'none',
+    borderTop: 'none',
+    animation: 'cornerPulse 3s ease-in-out infinite 1.5s',
   },
   subtitle: {
-    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-    opacity: 0.95,
-    fontWeight: '400',
-    textShadow: '0 2px 8px rgba(0,0,0,0.2)',
-    letterSpacing: '0.3px',
+    fontSize: 'clamp(1.05rem, 2.5vw, 1.35rem)',
+    fontWeight: '500',
+    textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.2)',
+    letterSpacing: '0.8px',
+    marginTop: '0',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    animation: 'subtitleFade 2s ease-in-out infinite',
+  },
+  subtitleIcon: {
+    fontSize: '1.5rem',
+    filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))',
+    animation: 'sparkle 2s ease-in-out infinite',
+  },
+  badge: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    padding: '0.5rem 1.25rem',
+    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%)',
+    backdropFilter: 'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
+    border: '1px solid rgba(16, 185, 129, 0.3)',
+    borderRadius: '50px',
+    fontSize: '0.9rem',
+    fontWeight: '600',
+    color: '#86efac',
+    textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0 4px 16px rgba(16, 185, 129, 0.2)',
+    marginTop: '1rem',
+    animation: 'badgePulse 2s ease-in-out infinite',
+  },
+  badgeIcon: {
+    fontSize: '1.1rem',
   },
   errorBox: {
     maxWidth: '800px',
