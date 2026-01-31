@@ -37,6 +37,9 @@ from gemini.email_generation.email_routes import email_bp
 # Import trend analysis routes
 from routes.trend_routes import trend_bp
 
+# Import intervention routes
+from routes.intervention_routes import intervention_bp
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
@@ -46,6 +49,7 @@ app.register_blueprint(chatbot_bp)
 app.register_blueprint(pdf_bp)
 app.register_blueprint(email_bp, url_prefix='/api/email')
 app.register_blueprint(trend_bp)
+app.register_blueprint(intervention_bp)
 
 # Initialize prediction service with Gemini AI enabled
 print("\n" + "="*60)
