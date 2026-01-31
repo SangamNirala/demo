@@ -1,0 +1,136 @@
+.download-report-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem 0;
+  gap: 1.25rem;
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.download-report-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 25px rgba(16, 185, 129, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.download-report-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.download-report-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.download-report-button:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 15px 35px rgba(16, 185, 129, 0.45),
+    0 8px 15px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.download-report-button:active:not(:disabled) {
+  transform: translateY(-2px) scale(1);
+  box-shadow: 
+    0 8px 20px rgba(16, 185, 129, 0.35),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-report-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 1.75rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.error-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.download-hint {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  max-width: 550px;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .download-report-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .download-hint {
+    font-size: 0.875rem;
+    padding: 0 1rem;
+  }
+}

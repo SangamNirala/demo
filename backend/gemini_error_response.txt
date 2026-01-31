@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Secure Financial Aid & Plan",
+    "description": "• **Connect immediately** with the financial aid office to discuss the 1-month fee delay and explore payment plans | • **Inquire about scholarships**, emergency funds, or part-time campus work opportunities to alleviate stress | • This will **reduce financial burden**, allowing Anjali to focus better on her academics and well-being.",
+    "priority": "urgent",
+    "icon": "💰"
+  },
+  {
+    "title": "Improve Academic Performance",
+    "description": "• **Meet with professors** for courses where grades are declining (CGPA 7.9 to 7.1) to understand challenges and seek guidance | • **Utilize tutoring services** and join study groups to grasp difficult concepts and improve understanding | • Regularly **track progress** and set realistic academic goals to restore CGPA and confidence.",
+    "priority": "high",
+    "icon": "📈"
+  },
+  {
+    "title": "Re-engage in Classes & LMS",
+    "description": "• **Identify reasons** for low attendance (74.4%) and discuss with an advisor to find solutions and support | • **Commit to regular class attendance** and active participation to catch up on missed content | • **Boost LMS activity** by engaging with online resources, assignments, and discussion forums for better learning.",
+    "priority": "high",
+    "icon": "📚"
+  },
+  {
+    "title": "Holistic Wellness & Support",
+    "description": "• **Connect with the university counseling center** to address financial stress and academic anxiety | • **Develop coping strategies** for stress management to maintain emotional well-being | • This support can **improve mental health**, positively impacting focus and overall performance.",
+    "priority": "medium",
+    "icon": "🧘‍♀️

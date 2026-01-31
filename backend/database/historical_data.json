@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "description": "Historical tracking data for student progress over time",
+    "last_updated": "2024-01-30"
+  },
+  "students": {
+    "2023EC4154": {
+      "risk_history": [
+        {"date": "2023-08-01", "risk_percentage": 35.2, "risk_level": "LOW"},
+        {"date": "2023-09-01", "risk_percentage": 38.5, "risk_level": "LOW"},
+        {"date": "2023-10-01", "risk_percentage": 40.6, "risk_level": "MEDIUM"},
+        {"date": "2023-11-01", "risk_percentage": 42.1, "risk_level": "MEDIUM"},
+        {"date": "2023-12-01", "risk_percentage": 40.6, "risk_level": "MEDIUM"}
+      ],
+      "attendance_history": [
+        {"date": "2023-08-01", "percentage": 85.0},
+        {"date": "2023-09-01", "percentage": 80.5},
+        {"date": "2023-10-01", "percentage": 78.2},
+        {"date": "2023-11-01", "percentage": 76.0},
+        {"date": "2023-12-01", "percentage": 74.4}
+      ],
+      "cgpa_history": [
+        {"semester": "Sem 1", "cgpa": 7.9, "date": "2023-06-01"},
+        {"semester": "Sem 2", "cgpa": 7.5, "date": "2023-12-01"},
+        {"semester": "Sem 3", "cgpa": 7.1, "date": "2024-01-30"}
+      ],
+      "interventions": [
+        {
+          "date": "2023-10-15",
+          "type": "Academic Counseling",
+          "description": "Met with academic advisor to discuss study strategies",
+          "impact": "positive"
+        }
+      ]
+    },
+    "2023BT2086": {
+      "risk_history": [
+        {"date": "2023-08-01", "risk_percentage": 45.0, "risk_level": "MEDIUM"},
+        {"date": "2023-09-01", "risk_percentage": 50.2, "risk_level": "MEDIUM"},
+        {"date": "2023-10-01", "risk_percentage": 54.8, "risk_level": "MEDIUM"},
+        {"date": "2023-11-01", "risk_percentage": 58.3, "risk_level": "MEDIUM"},
+        {"date": "2023-12-01", "risk_percentage": 56.8, "risk_level": "MEDIUM"}
+      ],
+      "attendance_history": [
+        {"date": "2023-08-01", "percentage": 65.0},
+        {"date": "2023-09-01", "percentage": 58.5},
+        {"date": "2023-10-01", "percentage": 50.2},
+        {"date": "2023-11-01", "percentage": 46.0},
+        {"date": "2023-12-01", "percentage": 43.4}
+      ],
+      "cgpa_history": [
+        {"semester": "Sem 1", "cgpa": 8.3, "date": "2023-06-01"},
+        {"semester": "Sem 2", "cgpa": 7.9, "date": "2023-12-01"}
+      ],
+      "interventions": [
+        {
+          "date": "2023-09-20",
+          "type": "Stress Counseling",
+          "description": "Counseling session to address stress and anxiety",
+          "impact": "neutral"
+        },
+        {
+          "date": "2023-11-10",
+          "type": "Financial Aid",
+          "description": "Applied for emergency financial assistance",
+          "impact": "positive"
+        }
+      ]
+    },
+    "2023CS3944": {
+      "risk_history": [
+        {"date": "2023-08-01", "risk_percentage": 52.0, "risk_level": "MEDIUM"},
+        {"date": "2023-09-01", "risk_percentage": 56.5, "risk_level": "MEDIUM"},
+        {"date": "2023-10-01", "risk_percentage": 59.2, "risk_level": "MEDIUM"},
+        {"date": "2023-11-01", "risk_percentage": 62.5, "risk_level": "MEDIUM"},
+        {"date": "2023-12-01", "risk_percentage": 61.8, "risk_level": "MEDIUM"}
+      ],
+      "attendance_history": [
+        {"date": "2023-08-01", "percentage": 55.0},
+        {"date": "2023-09-01", "percentage": 48.5},
+        {"date": "2023-10-01", "percentage": 45.2},
+        {"date": "2023-11-01", "percentage": 42.0},
+        {"date": "2023-12-01", "percentage": 40.0}
+      ],
+      "cgpa_history": [
+        {"semester": "Sem 1", "cgpa": 8.9, "date": "2023-06-01"},
+        {"semester": "Sem 2", "cgpa": 8.3, "date": "2023-12-01"}
+      ],
+      "interventions": [
+        {
+          "date": "2023-10-05",
+          "type": "Academic Warning",
+          "description": "Issued warning for low attendance",
+          "impact": "neutral"
+        }
+      ]
+    },
+    "2021CS1078": {
+      "risk_history": [
+        {"date": "2023-08-01", "risk_percentage": 55.0, "risk_level": "MEDIUM"},
+        {"date": "2023-09-01", "risk_percentage": 58.2, "risk_level": "MEDIUM"},
+        {"date": "2023-10-01", "risk_percentage": 61.0, "risk_level": "MEDIUM"},
+        {"date": "2023-11-01", "risk_percentage": 64.8, "risk_level": "MEDIUM"},
+        {"date": "2023-12-01", "risk_percentage": 63.4, "risk_level": "MEDIUM"}
+      ],
+      "attendance_history": [
+        {"date": "2023-08-01", "percentage": 45.0},
+        {"date": "2023-09-01", "percentage": 38.5},
+        {"date": "2023-10-01", "percentage": 32.2},
+        {"date": "2023-11-01", "percentage": 29.0},
+        {"date": "2023-12-01", "percentage": 27.4}
+      ],
+      "cgpa_history": [
+        {"semester": "Sem 1", "cgpa": 6.2, "date": "2023-06-01"},
+        {"semester": "Sem 2", "cgpa": 6.6, "date": "2023-12-01"}
+      ],
+      "interventions": [
+        {
+          "date": "2023-09-15",
+          "type": "Academic Counseling",
+          "description": "Discussion about academic performance and study habits",
+          "impact": "positive"
+        },
+        {
+          "date": "2023-11-20",
+          "type": "Attendance Meeting",
+          "description": "Meeting with HOD regarding critical attendance",
+          "impact": "neutral"
+        }
+      ]
+    },
+    "2023EE345": {
+      "risk_history": [
+        {"date": "2023-08-01", "risk_percentage": 32.0, "risk_level": "LOW"},
+        {"date": "2023-09-01", "risk_percentage": 35.5, "risk_level": "LOW"},
+        {"date": "2023-10-01", "risk_percentage": 37.2, "risk_level": "LOW"},
+        {"date": "2023-11-01", "risk_percentage": 39.0, "risk_level": "LOW"},
+        {"date": "2023-12-01", "risk_percentage": 38.4, "risk_level": "LOW"}
+      ],
+      "attendance_history": [
+        {"date": "2023-08-01", "percentage": 88.0},
+        {"date": "2023-09-01", "percentage": 89.5},
+        {"date": "2023-10-01", "percentage": 91.2},
+        {"date": "2023-11-01", "percentage": 90.8},
+        {"date": "2023-12-01", "percentage": 90.4}
+      ],
+      "cgpa_history": [
+        {"semester": "Sem 1", "cgpa": 6.5, "date": "2023-06-01"},
+        {"semester": "Sem 2", "cgpa": 6.2, "date": "2023-12-01"}
+      ],
+      "interventions": []
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/* ============================================
+   APP - ENHANCED BACKGROUND WITH IMAGE
+   ============================================ */
+
+.App {
+  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(59, 7, 100, 0.92) 50%, rgba(131, 24, 67, 0.92) 100%),
+    url('/assets/images/background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated gradient overlay with mesh effect */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 90% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+  animation: gradientShift 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Enhanced sparkle effects with twinkling */
+.App::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 90%, white, transparent),
+    radial-gradient(1px 1px at 70% 40%, white, transparent),
+    radial-gradient(2px 2px at 45% 15%, white, transparent);
+  background-size: 250% 250%;
+  background-position: 0% 0%;
+  animation: sparkle 25s linear infinite, twinkle 3s ease-in-out infinite;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    opacity: 0.85;
+    transform: scale(1.05) rotate(2deg);
+  }
+  66% {
+    opacity: 0.9;
+    transform: scale(1.08) rotate(-2deg);
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Floating particles effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+}
