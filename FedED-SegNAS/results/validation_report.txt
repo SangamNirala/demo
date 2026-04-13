@@ -1,0 +1,79 @@
+======================================================================
+DATA VALIDATION REPORT
+FedED-SegNAS Phase 1 Completion
+======================================================================
+
+SUMMARY
+----------------------------------------------------------------------
+Total Datasets Validated: 178
+Passed: 178 (100.0%)
+Failed: 0 (0.0%)
+
+BY MODEL
+----------------------------------------------------------------------
+model1:
+  Passed: 24/24
+
+model2:
+  Passed: 24/24
+
+model3:
+  Passed: 24/24
+
+model4:
+  Passed: 10/10
+
+model5:
+  Passed: 24/24
+
+model6:
+  Passed: 24/24
+
+model7:
+  Passed: 24/24
+
+model8:
+  Passed: 24/24
+
+VALIDATION CHECKS
+----------------------------------------------------------------------
+Class Balance:
+  Passed: 178/178 (100.0%)
+
+Data Shape:
+  Passed: 178/178 (100.0%)
+
+Federated Splits:
+  Passed: 178/178 (100.0%)
+
+Genotype Encoding:
+  Passed: 178/178 (100.0%)
+
+Missing Values:
+  Passed: 178/178 (100.0%)
+
+✅ ALL CHECKS PASSED!
+
+STATISTICAL SUMMARY
+----------------------------------------------------------------------
+Total Samples Across All Valid Datasets:
+  Training: 498,400
+  Validation: 106,800
+  Test: 106,800
+  Total: 712,000
+
+Feature Counts:
+  Min: 50
+  Max: 5000
+  Unique: 6
+
+Minor Allele Frequency (MAF) Statistics:
+  Overall Mean: 0.2922
+  Std Dev: 0.0997
+  Min: 0.1964
+  Max: 0.4037
+
+======================================================================
+Report generated for 178 datasets
+Processed data location: /app/FedED-SegNAS/data/processed
+======================================================================

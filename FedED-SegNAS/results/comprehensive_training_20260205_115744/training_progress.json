@@ -1,0 +1,130 @@
+{
+  "total_completed": 11,
+  "successful": 0,
+  "failed": 11,
+  "elapsed_time_minutes": 173.74875167210897,
+  "last_update": "2026-02-05T14:51:29.833206",
+  "results": [
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "ResourceExhaustedError: {{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} OOM when allocating tensor with shape[194,50,192] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu [Op:Conv2DBackpropInput] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 173.15801355044047,
+      "timestamp": "2026-02-05T14:50:54.388919"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_1.npz",
+      "error": "ResourceExhaustedError: {{function_node __wrapped__BatchMatMulV2_device_/job:localhost/replica:0/task:0/device:CPU:0}} OOM when allocating tensor with shape[16,256,64] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu [Op:BatchMatMulV2] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.5261075019836425,
+      "timestamp": "2026-02-05T14:51:26.019399"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 2.29 MiB for an array with shape (600000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00037327607472737633,
+      "timestamp": "2026-02-05T14:51:26.088336"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 2.29 MiB for an array with shape (600000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0003418246905008952,
+      "timestamp": "2026-02-05T14:51:26.120655"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 4.58 MiB for an array with shape (1200000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00026445388793945314,
+      "timestamp": "2026-02-05T14:51:26.151522"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 4.58 MiB for an array with shape (1200000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0003080844879150391,
+      "timestamp": "2026-02-05T14:51:26.192124"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_0.npz",
+      "error": "ResourceExhaustedError: {{function_node __wrapped__Conv2DBackpropFilter_device_/job:localhost/replica:0/task:0/device:CPU:0}} OOM when allocating tensor with shape[776,25,96] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu [Op:Conv2DBackpropFilter] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.03916866381963094,
+      "timestamp": "2026-02-05T14:51:28.552893"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_1.npz",
+      "error": "ResourceExhaustedError: {{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} OOM when allocating tensor with shape[736,13,64] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu [Op:Conv2DBackpropInput] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.019025886058807374,
+      "timestamp": "2026-02-05T14:51:29.713446"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 1.14 MiB for an array with shape (300000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0004625598589579264,
+      "timestamp": "2026-02-05T14:51:29.759714"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 1.14 MiB for an array with shape (300000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00041730801264444986,
+      "timestamp": "2026-02-05T14:51:29.805137"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Invalid dataset: Unable to allocate 11.4 MiB for an array with shape (3000000,) and data type float32",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.000251162052154541,
+      "timestamp": "2026-02-05T14:51:29.833206"
+    }
+  ]
+}

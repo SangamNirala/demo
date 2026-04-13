@@ -1,0 +1,3053 @@
+{
+  "total_datasets": 178,
+  "successful": 0,
+  "failed": 178,
+  "success_rate": 0.0,
+  "total_time_minutes": 0.7645818670590718,
+  "config": {
+    "min_rounds": 50,
+    "max_rounds": 200,
+    "patience": 25,
+    "local_epochs": 3,
+    "clients_per_round": 12,
+    "initial_lr": 0.005,
+    "min_lr": 5e-05,
+    "warmup_rounds": 10,
+    "use_warmup": true,
+    "use_nas": false,
+    "nas_frequency": 15,
+    "use_fedprox": true,
+    "fedprox_mu": 0.01
+  },
+  "timestamp": "2026-02-02T14:36:59.287755",
+  "failed_datasets": [
+    {
+      "dataset_name": "model1/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:13.786941"
+    },
+    {
+      "dataset_name": "model1/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:13.978370"
+    },
+    {
+      "dataset_name": "model1/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:14.236732"
+    },
+    {
+      "dataset_name": "model1/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:14.480706"
+    },
+    {
+      "dataset_name": "model1/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:14.815276"
+    },
+    {
+      "dataset_name": "model1/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:15.126668"
+    },
+    {
+      "dataset_name": "model1/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:15.396757"
+    },
+    {
+      "dataset_name": "model1/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:15.582465"
+    },
+    {
+      "dataset_name": "model1/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:15.813412"
+    },
+    {
+      "dataset_name": "model1/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:16.031294"
+    },
+    {
+      "dataset_name": "model1/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:16.400081"
+    },
+    {
+      "dataset_name": "model1/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:16.744844"
+    },
+    {
+      "dataset_name": "model1/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model1\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:16.933623"
+    },
+    {
+      "dataset_name": "model1/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model1\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:17.114784"
+    },
+    {
+      "dataset_name": "model1/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model1\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:17.354278"
+    },
+    {
+      "dataset_name": "model1/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model1\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:17.596092"
+    },
+    {
+      "dataset_name": "model1/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model1\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:17.895048"
+    },
+    {
+      "dataset_name": "model1/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model1\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:18.194937"
+    },
+    {
+      "dataset_name": "model1/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model1\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:18.398613"
+    },
+    {
+      "dataset_name": "model1/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model1\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:18.675750"
+    },
+    {
+      "dataset_name": "model1/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model1\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:18.881338"
+    },
+    {
+      "dataset_name": "model1/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model1\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:19.097033"
+    },
+    {
+      "dataset_name": "model1/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model1\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:19.427624"
+    },
+    {
+      "dataset_name": "model1/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model1\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:19.761200"
+    },
+    {
+      "dataset_name": "model2/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model2\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:19.949080"
+    },
+    {
+      "dataset_name": "model2/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model2\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:20.131371"
+    },
+    {
+      "dataset_name": "model2/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model2\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:20.379311"
+    },
+    {
+      "dataset_name": "model2/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model2\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:20.636698"
+    },
+    {
+      "dataset_name": "model2/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model2\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:20.933542"
+    },
+    {
+      "dataset_name": "model2/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model2\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:21.203465"
+    },
+    {
+      "dataset_name": "model2/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model2\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:21.399040"
+    },
+    {
+      "dataset_name": "model2/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model2\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:21.603413"
+    },
+    {
+      "dataset_name": "model2/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model2\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:21.846023"
+    },
+    {
+      "dataset_name": "model2/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model2\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:22.083944"
+    },
+    {
+      "dataset_name": "model2/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model2\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:22.535618"
+    },
+    {
+      "dataset_name": "model2/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model2\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:22.854372"
+    },
+    {
+      "dataset_name": "model2/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model2\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:23.049507"
+    },
+    {
+      "dataset_name": "model2/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model2\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:23.224136"
+    },
+    {
+      "dataset_name": "model2/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model2\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:23.437387"
+    },
+    {
+      "dataset_name": "model2/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model2\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:23.647178"
+    },
+    {
+      "dataset_name": "model2/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model2\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:23.923340"
+    },
+    {
+      "dataset_name": "model2/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model2\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:24.205394"
+    },
+    {
+      "dataset_name": "model2/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model2\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:24.391636"
+    },
+    {
+      "dataset_name": "model2/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model2\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:24.566791"
+    },
+    {
+      "dataset_name": "model2/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model2\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:24.799435"
+    },
+    {
+      "dataset_name": "model2/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model2\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:25.035324"
+    },
+    {
+      "dataset_name": "model2/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model2\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:25.407120"
+    },
+    {
+      "dataset_name": "model2/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model2\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:25.754579"
+    },
+    {
+      "dataset_name": "model3/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model3\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:25.962259"
+    },
+    {
+      "dataset_name": "model3/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model3\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:26.287786"
+    },
+    {
+      "dataset_name": "model3/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model3\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:26.520629"
+    },
+    {
+      "dataset_name": "model3/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model3\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:26.765054"
+    },
+    {
+      "dataset_name": "model3/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model3\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:27.054122"
+    },
+    {
+      "dataset_name": "model3/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model3\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:27.336694"
+    },
+    {
+      "dataset_name": "model3/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model3\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:27.518824"
+    },
+    {
+      "dataset_name": "model3/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model3\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:27.714573"
+    },
+    {
+      "dataset_name": "model3/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model3\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:27.938025"
+    },
+    {
+      "dataset_name": "model3/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model3\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:28.178833"
+    },
+    {
+      "dataset_name": "model3/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model3\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:28.559489"
+    },
+    {
+      "dataset_name": "model3/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model3\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:28.920243"
+    },
+    {
+      "dataset_name": "model3/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model3\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:29.103583"
+    },
+    {
+      "dataset_name": "model3/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model3\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:29.291952"
+    },
+    {
+      "dataset_name": "model3/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model3\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:29.517855"
+    },
+    {
+      "dataset_name": "model3/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model3\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:29.771893"
+    },
+    {
+      "dataset_name": "model3/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model3\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:30.072422"
+    },
+    {
+      "dataset_name": "model3/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model3\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:30.385559"
+    },
+    {
+      "dataset_name": "model3/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model3\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:30.583588"
+    },
+    {
+      "dataset_name": "model3/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model3\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:30.928469"
+    },
+    {
+      "dataset_name": "model3/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model3\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:31.138212"
+    },
+    {
+      "dataset_name": "model3/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model3\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:31.370844"
+    },
+    {
+      "dataset_name": "model3/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model3\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:31.703249"
+    },
+    {
+      "dataset_name": "model3/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model3\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:32.036759"
+    },
+    {
+      "dataset_name": "model4/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model4\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:32.220529"
+    },
+    {
+      "dataset_name": "model4/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model4\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:32.421750"
+    },
+    {
+      "dataset_name": "model4/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model4\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:32.662809"
+    },
+    {
+      "dataset_name": "model4/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model4\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:32.915668"
+    },
+    {
+      "dataset_name": "model4/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model4\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:33.203449"
+    },
+    {
+      "dataset_name": "model4/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model4\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:33.522072"
+    },
+    {
+      "dataset_name": "model4/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model4\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:33.762521"
+    },
+    {
+      "dataset_name": "model4/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model4\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:33.986898"
+    },
+    {
+      "dataset_name": "model4/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model4\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:34.353984"
+    },
+    {
+      "dataset_name": "model4/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model4\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:34.720656"
+    },
+    {
+      "dataset_name": "model5/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model5\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:34.921203"
+    },
+    {
+      "dataset_name": "model5/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model5\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:35.103722"
+    },
+    {
+      "dataset_name": "model5/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model5\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:35.354720"
+    },
+    {
+      "dataset_name": "model5/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model5\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:35.602595"
+    },
+    {
+      "dataset_name": "model5/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model5\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:36.092555"
+    },
+    {
+      "dataset_name": "model5/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model5\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:36.363305"
+    },
+    {
+      "dataset_name": "model5/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model5\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:36.553413"
+    },
+    {
+      "dataset_name": "model5/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model5\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:36.750163"
+    },
+    {
+      "dataset_name": "model5/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model5\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:36.962712"
+    },
+    {
+      "dataset_name": "model5/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model5\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:37.177120"
+    },
+    {
+      "dataset_name": "model5/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model5\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:37.498968"
+    },
+    {
+      "dataset_name": "model5/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model5\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:37.831268"
+    },
+    {
+      "dataset_name": "model5/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model5\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:38.018205"
+    },
+    {
+      "dataset_name": "model5/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model5\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:38.202973"
+    },
+    {
+      "dataset_name": "model5/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model5\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:38.444873"
+    },
+    {
+      "dataset_name": "model5/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model5\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:38.698402"
+    },
+    {
+      "dataset_name": "model5/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model5\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:38.994894"
+    },
+    {
+      "dataset_name": "model5/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model5\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:39.284454"
+    },
+    {
+      "dataset_name": "model5/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model5\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:39.465353"
+    },
+    {
+      "dataset_name": "model5/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model5\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:39.665574"
+    },
+    {
+      "dataset_name": "model5/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model5\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:39.897872"
+    },
+    {
+      "dataset_name": "model5/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model5\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:40.129098"
+    },
+    {
+      "dataset_name": "model5/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model5\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:40.475064"
+    },
+    {
+      "dataset_name": "model5/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model5\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:40.822053"
+    },
+    {
+      "dataset_name": "model6/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model6\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:41.235997"
+    },
+    {
+      "dataset_name": "model6/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model6\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:41.415450"
+    },
+    {
+      "dataset_name": "model6/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model6\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:41.636591"
+    },
+    {
+      "dataset_name": "model6/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model6\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:41.862593"
+    },
+    {
+      "dataset_name": "model6/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model6\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:42.149313"
+    },
+    {
+      "dataset_name": "model6/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model6\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:42.433093"
+    },
+    {
+      "dataset_name": "model6/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model6\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:42.636573"
+    },
+    {
+      "dataset_name": "model6/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model6\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:42.853673"
+    },
+    {
+      "dataset_name": "model6/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model6\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:43.086942"
+    },
+    {
+      "dataset_name": "model6/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model6\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:43.320205"
+    },
+    {
+      "dataset_name": "model6/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model6\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:43.637074"
+    },
+    {
+      "dataset_name": "model6/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model6\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:43.956588"
+    },
+    {
+      "dataset_name": "model6/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model6\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:44.153457"
+    },
+    {
+      "dataset_name": "model6/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model6\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:44.337134"
+    },
+    {
+      "dataset_name": "model6/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model6\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:44.566413"
+    },
+    {
+      "dataset_name": "model6/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model6\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:44.804457"
+    },
+    {
+      "dataset_name": "model6/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model6\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:45.104354"
+    },
+    {
+      "dataset_name": "model6/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model6\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:45.387874"
+    },
+    {
+      "dataset_name": "model6/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model6\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:45.571308"
+    },
+    {
+      "dataset_name": "model6/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model6\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:45.754761"
+    },
+    {
+      "dataset_name": "model6/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model6\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:45.970177"
+    },
+    {
+      "dataset_name": "model6/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model6\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:46.187790"
+    },
+    {
+      "dataset_name": "model6/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model6\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:46.519857"
+    },
+    {
+      "dataset_name": "model6/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model6\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:47.121189"
+    },
+    {
+      "dataset_name": "model7/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model7\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:47.304028"
+    },
+    {
+      "dataset_name": "model7/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model7\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:47.488059"
+    },
+    {
+      "dataset_name": "model7/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model7\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:47.704100"
+    },
+    {
+      "dataset_name": "model7/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model7\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:47.954225"
+    },
+    {
+      "dataset_name": "model7/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model7\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:48.246780"
+    },
+    {
+      "dataset_name": "model7/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model7\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:48.573720"
+    },
+    {
+      "dataset_name": "model7/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model7\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:48.754674"
+    },
+    {
+      "dataset_name": "model7/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model7\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:48.938206"
+    },
+    {
+      "dataset_name": "model7/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model7\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:49.154367"
+    },
+    {
+      "dataset_name": "model7/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model7\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:49.369872"
+    },
+    {
+      "dataset_name": "model7/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model7\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:49.704152"
+    },
+    {
+      "dataset_name": "model7/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model7\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:50.038371"
+    },
+    {
+      "dataset_name": "model7/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model7\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:50.254807"
+    },
+    {
+      "dataset_name": "model7/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model7\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:50.421339"
+    },
+    {
+      "dataset_name": "model7/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model7\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:50.654209"
+    },
+    {
+      "dataset_name": "model7/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model7\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:50.887870"
+    },
+    {
+      "dataset_name": "model7/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model7\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:51.202993"
+    },
+    {
+      "dataset_name": "model7/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model7\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:51.487628"
+    },
+    {
+      "dataset_name": "model7/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model7\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:51.687657"
+    },
+    {
+      "dataset_name": "model7/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model7\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:51.870824"
+    },
+    {
+      "dataset_name": "model7/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model7\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:52.104266"
+    },
+    {
+      "dataset_name": "model7/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model7\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:52.337561"
+    },
+    {
+      "dataset_name": "model7/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model7\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:52.703207"
+    },
+    {
+      "dataset_name": "model7/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model7\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:53.071100"
+    },
+    {
+      "dataset_name": "model8/order2/snps100/dataset_0",
+      "filepath": "data\\processed\\model8\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:53.571605"
+    },
+    {
+      "dataset_name": "model8/order2/snps100/dataset_1",
+      "filepath": "data\\processed\\model8\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:53.754446"
+    },
+    {
+      "dataset_name": "model8/order2/snps1000/dataset_0",
+      "filepath": "data\\processed\\model8\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:53.971319"
+    },
+    {
+      "dataset_name": "model8/order2/snps1000/dataset_1",
+      "filepath": "data\\processed\\model8\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:54.188349"
+    },
+    {
+      "dataset_name": "model8/order2/snps2000/dataset_0",
+      "filepath": "data\\processed\\model8\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:54.454315"
+    },
+    {
+      "dataset_name": "model8/order2/snps2000/dataset_1",
+      "filepath": "data\\processed\\model8\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:54.737692"
+    },
+    {
+      "dataset_name": "model8/order2/snps50/dataset_0",
+      "filepath": "data\\processed\\model8\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:54.921238"
+    },
+    {
+      "dataset_name": "model8/order2/snps50/dataset_1",
+      "filepath": "data\\processed\\model8\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:55.104901"
+    },
+    {
+      "dataset_name": "model8/order2/snps500/dataset_0",
+      "filepath": "data\\processed\\model8\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:55.320962"
+    },
+    {
+      "dataset_name": "model8/order2/snps500/dataset_1",
+      "filepath": "data\\processed\\model8\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:55.554281"
+    },
+    {
+      "dataset_name": "model8/order2/snps5000/dataset_0",
+      "filepath": "data\\processed\\model8\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:55.904458"
+    },
+    {
+      "dataset_name": "model8/order2/snps5000/dataset_1",
+      "filepath": "data\\processed\\model8\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:56.283505"
+    },
+    {
+      "dataset_name": "model8/order3/snps100/dataset_0",
+      "filepath": "data\\processed\\model8\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:56.487785"
+    },
+    {
+      "dataset_name": "model8/order3/snps100/dataset_1",
+      "filepath": "data\\processed\\model8\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:56.671335"
+    },
+    {
+      "dataset_name": "model8/order3/snps1000/dataset_0",
+      "filepath": "data\\processed\\model8\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:56.888013"
+    },
+    {
+      "dataset_name": "model8/order3/snps1000/dataset_1",
+      "filepath": "data\\processed\\model8\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:57.137736"
+    },
+    {
+      "dataset_name": "model8/order3/snps2000/dataset_0",
+      "filepath": "data\\processed\\model8\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:57.455151"
+    },
+    {
+      "dataset_name": "model8/order3/snps2000/dataset_1",
+      "filepath": "data\\processed\\model8\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:57.752716"
+    },
+    {
+      "dataset_name": "model8/order3/snps50/dataset_0",
+      "filepath": "data\\processed\\model8\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:57.937975"
+    },
+    {
+      "dataset_name": "model8/order3/snps50/dataset_1",
+      "filepath": "data\\processed\\model8\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:58.121019"
+    },
+    {
+      "dataset_name": "model8/order3/snps500/dataset_0",
+      "filepath": "data\\processed\\model8\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:58.321480"
+    },
+    {
+      "dataset_name": "model8/order3/snps500/dataset_1",
+      "filepath": "data\\processed\\model8\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:58.551782"
+    },
+    {
+      "dataset_name": "model8/order3/snps5000/dataset_0",
+      "filepath": "data\\processed\\model8\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:58.887698"
+    },
+    {
+      "dataset_name": "model8/order3/snps5000/dataset_1",
+      "filepath": "data\\processed\\model8\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "timestamp": "2026-02-02T14:36:59.253391"
+    }
+  ],
+  "all_results": [
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006508084138234457,
+      "timestamp": "2026-02-02T14:36:13.786941"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0031904737154642743,
+      "timestamp": "2026-02-02T14:36:13.978370"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004172690709431966,
+      "timestamp": "2026-02-02T14:36:14.236732"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00373843510945638,
+      "timestamp": "2026-02-02T14:36:14.480706"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0050280253092447914,
+      "timestamp": "2026-02-02T14:36:14.815276"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004831258455912272,
+      "timestamp": "2026-02-02T14:36:15.126668"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00419016679128011,
+      "timestamp": "2026-02-02T14:36:15.396757"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003095130125681559,
+      "timestamp": "2026-02-02T14:36:15.582465"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0038491169611612956,
+      "timestamp": "2026-02-02T14:36:15.813412"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0035208781560262044,
+      "timestamp": "2026-02-02T14:36:16.031294"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0058860262235005695,
+      "timestamp": "2026-02-02T14:36:16.400081"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005410540103912354,
+      "timestamp": "2026-02-02T14:36:16.744844"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027317444483439127,
+      "timestamp": "2026-02-02T14:36:16.933623"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003019348780314128,
+      "timestamp": "2026-02-02T14:36:17.114784"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036229570706685383,
+      "timestamp": "2026-02-02T14:36:17.354278"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0037450353304545087,
+      "timestamp": "2026-02-02T14:36:17.596092"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00456766684850057,
+      "timestamp": "2026-02-02T14:36:17.895048"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004568469524383545,
+      "timestamp": "2026-02-02T14:36:18.194937"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0028500715891520184,
+      "timestamp": "2026-02-02T14:36:18.398613"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004618938763936361,
+      "timestamp": "2026-02-02T14:36:18.675750"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0034264723459879556,
+      "timestamp": "2026-02-02T14:36:18.881338"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003334685166676839,
+      "timestamp": "2026-02-02T14:36:19.097033"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005249424775441488,
+      "timestamp": "2026-02-02T14:36:19.427624"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005123007297515869,
+      "timestamp": "2026-02-02T14:36:19.761200"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0028527021408081056,
+      "timestamp": "2026-02-02T14:36:19.949080"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0030381838480631512,
+      "timestamp": "2026-02-02T14:36:20.131371"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0038510719935099286,
+      "timestamp": "2026-02-02T14:36:20.379311"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003885066509246826,
+      "timestamp": "2026-02-02T14:36:20.636698"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004666924476623535,
+      "timestamp": "2026-02-02T14:36:20.933542"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0042170484860738116,
+      "timestamp": "2026-02-02T14:36:21.203465"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0029588818550109865,
+      "timestamp": "2026-02-02T14:36:21.399040"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0030538201332092284,
+      "timestamp": "2026-02-02T14:36:21.603413"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0037205735842386883,
+      "timestamp": "2026-02-02T14:36:21.846023"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003565486272176107,
+      "timestamp": "2026-02-02T14:36:22.083944"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.007123891512552897,
+      "timestamp": "2026-02-02T14:36:22.535618"
+    },
+    {
+      "model_name": "model2",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0049994508425394695,
+      "timestamp": "2026-02-02T14:36:22.854372"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0028082807858784992,
+      "timestamp": "2026-02-02T14:36:23.049507"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002837872505187988,
+      "timestamp": "2026-02-02T14:36:23.224136"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003394623597462972,
+      "timestamp": "2026-02-02T14:36:23.437387"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0032209197680155436,
+      "timestamp": "2026-02-02T14:36:23.647178"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004343068599700928,
+      "timestamp": "2026-02-02T14:36:23.923340"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00447627305984497,
+      "timestamp": "2026-02-02T14:36:24.205394"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0028371493021647136,
+      "timestamp": "2026-02-02T14:36:24.391636"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027359406153361003,
+      "timestamp": "2026-02-02T14:36:24.566791"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036080400149027508,
+      "timestamp": "2026-02-02T14:36:24.799435"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036334991455078125,
+      "timestamp": "2026-02-02T14:36:25.035324"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model2\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005852349599202474,
+      "timestamp": "2026-02-02T14:36:25.407120"
+    },
+    {
+      "model_name": "model2",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model2\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00530001719792684,
+      "timestamp": "2026-02-02T14:36:25.754579"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00318833589553833,
+      "timestamp": "2026-02-02T14:36:25.962259"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00525206724802653,
+      "timestamp": "2026-02-02T14:36:26.287786"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036032954851786298,
+      "timestamp": "2026-02-02T14:36:26.520629"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003601964314778646,
+      "timestamp": "2026-02-02T14:36:26.765054"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004543673992156982,
+      "timestamp": "2026-02-02T14:36:27.054122"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004362547397613525,
+      "timestamp": "2026-02-02T14:36:27.336694"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002737923463185628,
+      "timestamp": "2026-02-02T14:36:27.518824"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0030017813046773274,
+      "timestamp": "2026-02-02T14:36:27.714573"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003560928503672282,
+      "timestamp": "2026-02-02T14:36:27.938025"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003745476404825846,
+      "timestamp": "2026-02-02T14:36:28.178833"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005572223663330078,
+      "timestamp": "2026-02-02T14:36:28.559489"
+    },
+    {
+      "model_name": "model3",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0055022080739339195,
+      "timestamp": "2026-02-02T14:36:28.920243"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027687708536783856,
+      "timestamp": "2026-02-02T14:36:29.103583"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002847099304199219,
+      "timestamp": "2026-02-02T14:36:29.291952"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0035814722379048664,
+      "timestamp": "2026-02-02T14:36:29.517855"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0038265387217203775,
+      "timestamp": "2026-02-02T14:36:29.771893"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0047239224116007485,
+      "timestamp": "2026-02-02T14:36:30.072422"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004948826630910238,
+      "timestamp": "2026-02-02T14:36:30.385559"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002965700626373291,
+      "timestamp": "2026-02-02T14:36:30.583588"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005498572190602621,
+      "timestamp": "2026-02-02T14:36:30.928469"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003307958443959554,
+      "timestamp": "2026-02-02T14:36:31.138212"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0033525943756103514,
+      "timestamp": "2026-02-02T14:36:31.370844"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model3\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0052753885587056475,
+      "timestamp": "2026-02-02T14:36:31.703249"
+    },
+    {
+      "model_name": "model3",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model3\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005221923192342122,
+      "timestamp": "2026-02-02T14:36:32.036759"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model4\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027536392211914063,
+      "timestamp": "2026-02-02T14:36:32.220529"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model4\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0028348843256632487,
+      "timestamp": "2026-02-02T14:36:32.421750"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model4\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0037678241729736327,
+      "timestamp": "2026-02-02T14:36:32.662809"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model4\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003671550750732422,
+      "timestamp": "2026-02-02T14:36:32.915668"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model4\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004233674208323161,
+      "timestamp": "2026-02-02T14:36:33.203449"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model4\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004750744501749674,
+      "timestamp": "2026-02-02T14:36:33.523071"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model4\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003637508551279704,
+      "timestamp": "2026-02-02T14:36:33.762521"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model4\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0033374826113382974,
+      "timestamp": "2026-02-02T14:36:33.986898"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model4\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005526932080586752,
+      "timestamp": "2026-02-02T14:36:34.353984"
+    },
+    {
+      "model_name": "model4",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model4\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005795812606811524,
+      "timestamp": "2026-02-02T14:36:34.720656"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0030580639839172365,
+      "timestamp": "2026-02-02T14:36:34.921203"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027693827946980794,
+      "timestamp": "2026-02-02T14:36:35.103722"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036395907402038572,
+      "timestamp": "2026-02-02T14:36:35.354720"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003598924477895101,
+      "timestamp": "2026-02-02T14:36:35.602595"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.007568585872650147,
+      "timestamp": "2026-02-02T14:36:36.092555"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004313802719116211,
+      "timestamp": "2026-02-02T14:36:36.363305"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0026641527811686197,
+      "timestamp": "2026-02-02T14:36:36.553413"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0029884775479634604,
+      "timestamp": "2026-02-02T14:36:36.750163"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003542474905649821,
+      "timestamp": "2026-02-02T14:36:36.962712"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0032771865526835123,
+      "timestamp": "2026-02-02T14:36:37.177120"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005173957347869873,
+      "timestamp": "2026-02-02T14:36:37.498968"
+    },
+    {
+      "model_name": "model5",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005071131388346354,
+      "timestamp": "2026-02-02T14:36:37.831268"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002701854705810547,
+      "timestamp": "2026-02-02T14:36:38.018205"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00276110569636027,
+      "timestamp": "2026-02-02T14:36:38.202973"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0037482500076293944,
+      "timestamp": "2026-02-02T14:36:38.444873"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003794991970062256,
+      "timestamp": "2026-02-02T14:36:38.698402"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00451358159383138,
+      "timestamp": "2026-02-02T14:36:38.994894"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004291276137034099,
+      "timestamp": "2026-02-02T14:36:39.284454"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002635649840037028,
+      "timestamp": "2026-02-02T14:36:39.465353"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027917782465616864,
+      "timestamp": "2026-02-02T14:36:39.665574"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003388631343841553,
+      "timestamp": "2026-02-02T14:36:39.897872"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003384717305501302,
+      "timestamp": "2026-02-02T14:36:40.129098"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model5\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005263610680898031,
+      "timestamp": "2026-02-02T14:36:40.475064"
+    },
+    {
+      "model_name": "model5",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model5\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00558697779973348,
+      "timestamp": "2026-02-02T14:36:40.822053"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006654119491577149,
+      "timestamp": "2026-02-02T14:36:41.235997"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027947505315144856,
+      "timestamp": "2026-02-02T14:36:41.415450"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00333785613377889,
+      "timestamp": "2026-02-02T14:36:41.636591"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003490785757700602,
+      "timestamp": "2026-02-02T14:36:41.862593"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004235299428304037,
+      "timestamp": "2026-02-02T14:36:42.149313"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004367061456044515,
+      "timestamp": "2026-02-02T14:36:42.433093"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0029767870903015135,
+      "timestamp": "2026-02-02T14:36:42.636573"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0033329248428344725,
+      "timestamp": "2026-02-02T14:36:42.853673"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0035843451817830405,
+      "timestamp": "2026-02-02T14:36:43.086942"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036109447479248046,
+      "timestamp": "2026-02-02T14:36:43.320205"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004991857210795084,
+      "timestamp": "2026-02-02T14:36:43.637074"
+    },
+    {
+      "model_name": "model6",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005036747455596924,
+      "timestamp": "2026-02-02T14:36:43.956588"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003040607770284017,
+      "timestamp": "2026-02-02T14:36:44.153457"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00278775691986084,
+      "timestamp": "2026-02-02T14:36:44.337134"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0035312771797180176,
+      "timestamp": "2026-02-02T14:36:44.566413"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0037335952123006186,
+      "timestamp": "2026-02-02T14:36:44.804457"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00471347173055013,
+      "timestamp": "2026-02-02T14:36:45.104354"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00417170524597168,
+      "timestamp": "2026-02-02T14:36:45.387874"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0025075435638427734,
+      "timestamp": "2026-02-02T14:36:45.571308"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027751723925272622,
+      "timestamp": "2026-02-02T14:36:45.754761"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003590269883473714,
+      "timestamp": "2026-02-02T14:36:45.970177"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0033355196317036945,
+      "timestamp": "2026-02-02T14:36:46.187790"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model6\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005247652530670166,
+      "timestamp": "2026-02-02T14:36:46.519857"
+    },
+    {
+      "model_name": "model6",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model6\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.009718044598897298,
+      "timestamp": "2026-02-02T14:36:47.121189"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002760513623555501,
+      "timestamp": "2026-02-02T14:36:47.304028"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027792612711588544,
+      "timestamp": "2026-02-02T14:36:47.488059"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036006967226664224,
+      "timestamp": "2026-02-02T14:36:47.704100"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036072333653767905,
+      "timestamp": "2026-02-02T14:36:47.954225"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004589239756266276,
+      "timestamp": "2026-02-02T14:36:48.246780"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005044412612915039,
+      "timestamp": "2026-02-02T14:36:48.573720"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002781879901885986,
+      "timestamp": "2026-02-02T14:36:48.754674"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00277556578318278,
+      "timestamp": "2026-02-02T14:36:48.938206"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036026755968729656,
+      "timestamp": "2026-02-02T14:36:49.154367"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003591752052307129,
+      "timestamp": "2026-02-02T14:36:49.369872"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005267886320749918,
+      "timestamp": "2026-02-02T14:36:49.704152"
+    },
+    {
+      "model_name": "model7",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005287686983744304,
+      "timestamp": "2026-02-02T14:36:50.038371"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0030547658602396647,
+      "timestamp": "2026-02-02T14:36:50.254807"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0024939537048339843,
+      "timestamp": "2026-02-02T14:36:50.421339"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003602186838785807,
+      "timestamp": "2026-02-02T14:36:50.654209"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036157528559366864,
+      "timestamp": "2026-02-02T14:36:50.887870"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0049778421719868975,
+      "timestamp": "2026-02-02T14:36:51.202993"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00443879763285319,
+      "timestamp": "2026-02-02T14:36:51.487628"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027713497479756673,
+      "timestamp": "2026-02-02T14:36:51.687657"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027768810590108237,
+      "timestamp": "2026-02-02T14:36:51.870824"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003611902395884196,
+      "timestamp": "2026-02-02T14:36:52.104266"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.00360715389251709,
+      "timestamp": "2026-02-02T14:36:52.337561"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model7\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005534847577412923,
+      "timestamp": "2026-02-02T14:36:52.703207"
+    },
+    {
+      "model_name": "model7",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model7\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0058312614758809405,
+      "timestamp": "2026-02-02T14:36:53.071100"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order2\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008065378665924073,
+      "timestamp": "2026-02-02T14:36:53.571605"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order2\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027723431587219237,
+      "timestamp": "2026-02-02T14:36:53.754446"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order2\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036145488421122232,
+      "timestamp": "2026-02-02T14:36:53.971319"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order2\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0033367156982421877,
+      "timestamp": "2026-02-02T14:36:54.188349"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order2\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004155496756235759,
+      "timestamp": "2026-02-02T14:36:54.454315"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order2\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004425923029581706,
+      "timestamp": "2026-02-02T14:36:54.737692"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order2\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002496147155761719,
+      "timestamp": "2026-02-02T14:36:54.921238"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order2\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027863184611002603,
+      "timestamp": "2026-02-02T14:36:55.104901"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order2\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0033288121223449705,
+      "timestamp": "2026-02-02T14:36:55.320962"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order2\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003332972526550293,
+      "timestamp": "2026-02-02T14:36:55.554281"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order2\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005559806029001872,
+      "timestamp": "2026-02-02T14:36:55.904458"
+    },
+    {
+      "model_name": "model8",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order2\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005759322643280029,
+      "timestamp": "2026-02-02T14:36:56.283505"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order3\\snps100\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0028317491213480633,
+      "timestamp": "2026-02-02T14:36:56.487785"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order3\\snps100\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002772645155588786,
+      "timestamp": "2026-02-02T14:36:56.671335"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order3\\snps1000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.003611294428507487,
+      "timestamp": "2026-02-02T14:36:56.888013"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order3\\snps1000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0036076505978902182,
+      "timestamp": "2026-02-02T14:36:57.137736"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order3\\snps2000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004732676347096761,
+      "timestamp": "2026-02-02T14:36:57.455151"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order3\\snps2000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.004524139563242594,
+      "timestamp": "2026-02-02T14:36:57.752716"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order3\\snps50\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0027567466100056966,
+      "timestamp": "2026-02-02T14:36:57.937975"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order3\\snps50\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.002772843837738037,
+      "timestamp": "2026-02-02T14:36:58.121258"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order3\\snps500\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0030581037203470866,
+      "timestamp": "2026-02-02T14:36:58.321480"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order3\\snps500\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.0035598198572794598,
+      "timestamp": "2026-02-02T14:36:58.551782"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model8\\order3\\snps5000\\dataset_0.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005526351928710938,
+      "timestamp": "2026-02-02T14:36:58.887698"
+    },
+    {
+      "model_name": "model8",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model8\\order3\\snps5000\\dataset_1.npz",
+      "error": "ValueError: Only one of `clipnorm`, `clipvalue` and `global_clipnorm` can be set. Received: clipnorm=1.0, clipvalue=0.5, global_clipnorm=None",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.005815545717875163,
+      "timestamp": "2026-02-02T14:36:59.253391"
+    }
+  ]
+}

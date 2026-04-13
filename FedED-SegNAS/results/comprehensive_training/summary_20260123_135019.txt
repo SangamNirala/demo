@@ -1,0 +1,24 @@
+COMPREHENSIVE FEDERATED TRAINING SUMMARY
+================================================================================
+
+Timestamp: 2026-01-23T13:50:19.446501
+Configuration: {'base_rounds': 100, 'max_rounds': 500, 'patience': 20, 'local_epochs': 10, 'clients_per_round': 15, 'initial_lr': 0.01, 'min_lr': 0.0001, 'use_nas': False, 'nas_frequency': 10}
+
+OVERALL STATISTICS
+----------------------------------------
+Total datasets: 2
+Successful: 2
+Failed: 0
+Success rate: 100.0%
+
+ACCURACY STATISTICS
+----------------------------------------
+Average: 0.5000 (50.00%)
+Std Dev: 0.0000
+Min: 0.5000 (50.00%)
+Max: 0.5000 (50.00%)
+
+DETAILED RESULTS
+--------------------------------------------------------------------------------
+model1/order2/snps50/dataset_0                     0.5000 (50.00%) rounds=21 (early)
+model1/order2/snps50/dataset_1                     0.5000 (50.00%) rounds=21 (early)

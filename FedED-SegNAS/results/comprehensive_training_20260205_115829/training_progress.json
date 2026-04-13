@@ -1,0 +1,20 @@
+{
+  "total_completed": 1,
+  "successful": 0,
+  "failed": 1,
+  "elapsed_time_minutes": 172.9453031738599,
+  "last_update": "2026-02-05T14:51:25.914222",
+  "results": [
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "ResourceExhaustedError: {{function_node __wrapped__Conv2DBackpropInput_device_/job:localhost/replica:0/task:0/device:CPU:0}} OOM when allocating tensor with shape[186,25,128] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu [Op:Conv2DBackpropInput] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 172.94401755332947,
+      "timestamp": "2026-02-05T14:51:25.837085"
+    }
+  ]
+}

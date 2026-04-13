@@ -1,0 +1,137 @@
+================================================================================
+QUICK START: TRAINING WORKFLOW
+================================================================================
+
+STEP 1: Check Your System
+--------------------------
+Run: check_system_resources.bat
+
+Need for PARALLEL:  8+ cores, 16+ GB RAM
+Need for SEQUENTIAL: 4+ cores, 8+ GB RAM
+
+
+STEP 2: Choose Your Approach
+-----------------------------
+
+Option A: SEQUENTIAL (Recommended for most users)
+   Command: run_sequential_training.bat
+   Time:    53-62 days
+   System:  Any
+
+Option B: PARALLEL (For powerful systems)
+   Command: run_parallel_training.bat
+   Time:    18-42 days
+   System:  8+ cores, 16+ GB RAM
+
+Option C: PARALLEL BY MODEL (Smart approach)
+   Command: run_parallel_by_model.bat
+   Time:    25-35 days
+   System:  6+ cores, 12+ GB RAM
+
+
+STEP 3: Run Training
+--------------------
+
+SEQUENTIAL:
+   1. Double-click: run_sequential_training.bat
+   2. Wait for Phase 1 (500 epochs) to complete
+   3. Phase 2 (1000 epochs) starts automatically
+
+PARALLEL:
+   1. Double-click: run_parallel_training.bat
+   2. Two windows open - both run simultaneously
+   3. Monitor both windows
+
+PARALLEL BY MODEL:
+   1. Double-click: run_parallel_by_model.bat
+   2. Terminal 1: Models 1-4 (500 epochs)
+   3. Terminal 2: Models 5-8 (1000 epochs)
+
+
+STEP 4: Monitor Progress
+-------------------------
+
+Check results folder:
+   results\comprehensive_training_YYYYMMDD_HHMMSS\
+
+View progress:
+   type results\comprehensive_training_*\training_progress.json
+
+Check current round:
+   Look at terminal output: "Round X/500" or "Round X/1000"
+
+
+STEP 5: Stop Training (if needed)
+----------------------------------
+
+Stop one training:
+   - Press Ctrl+C in that terminal
+   - Or close the terminal window
+
+Stop all training:
+   taskkill /IM python.exe /F
+
+
+================================================================================
+MANUAL COMMANDS (if you prefer)
+================================================================================
+
+500 Epochs (HIGH_ACCURACY):
+   python train_all_models_comprehensive.py --high-accuracy
+
+1000 Epochs (PAPER):
+   python train_all_models_comprehensive222.py
+
+Specific Model:
+   python train_all_models_comprehensive.py --model model1
+
+Quick Test:
+   python train_all_models_comprehensive.py --quick
+
+
+================================================================================
+RESULTS LOCATION
+================================================================================
+
+All results saved to:
+   FedED-SegNAS\results\comprehensive_training_YYYYMMDD_HHMMSS\
+
+Key files:
+   - final_summary.txt          (Human-readable results)
+   - final_summary.json         (Machine-readable results)
+   - training_config.json       (Configuration used)
+   - training_progress.json     (Per-dataset progress)
+   - plots\                     (Visualization plots)
+   - trained_models\            (Saved model weights)
+
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+System too slow?
+   → Stop one training, run sequentially
+
+Out of memory?
+   → Stop one training, close other apps
+
+Can't tell which is which?
+   → Check training_config.json in results folder
+   → Look at "max_rounds": 500 or 1000
+
+Training stopped?
+   → Check error in terminal
+   → Restart with same command
+
+
+================================================================================
+NEED HELP?
+================================================================================
+
+Read full guide: TRAINING_WORKFLOW_GUIDE.md
+Read 1000 epoch info: TRAIN_1000_EPOCHS_README.md
+
+Check system: check_system_resources.bat
+
+
+================================================================================

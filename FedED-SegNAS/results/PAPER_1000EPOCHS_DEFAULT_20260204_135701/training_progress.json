@@ -1,0 +1,20 @@
+{
+  "total_completed": 1,
+  "successful": 0,
+  "failed": 1,
+  "elapsed_time_minutes": 118.37031030654907,
+  "last_update": "2026-02-04T15:55:23.980890",
+  "results": [
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "AbortedError: {{function_node __wrapped____MklNativeConv2DBackpropFilter_device_/job:localhost/replica:0/task:0/device:CPU:0}} Operation received an exception:Status: 1, message: could not create a primitive, in file tensorflow/core/kernels/mkl/mkl_conv_grad_filter_ops.cc:685 [Op:Conv2DBackpropFilter] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 118.36978004773458,
+      "timestamp": "2026-02-04T15:55:23.949074"
+    }
+  ]
+}

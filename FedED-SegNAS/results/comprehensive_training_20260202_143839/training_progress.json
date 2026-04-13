@@ -1,0 +1,64 @@
+{
+  "total_completed": 5,
+  "successful": 0,
+  "failed": 5,
+  "elapsed_time_minutes": 0.05442156791687012,
+  "last_update": "2026-02-02T14:38:42.442294",
+  "results": [
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "InvalidArgumentError: {{function_node __wrapped__Sub_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [5,3,64] vs. [3] [Op:Sub] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.01628411610921224,
+      "timestamp": "2026-02-02T14:38:40.154047"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_1.npz",
+      "error": "InvalidArgumentError: {{function_node __wrapped__Sub_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [5,3,64] vs. [3] [Op:Sub] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006703527768452963,
+      "timestamp": "2026-02-02T14:38:40.572729"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_0.npz",
+      "error": "InvalidArgumentError: {{function_node __wrapped__Sub_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [7,3,64] vs. [3] [Op:Sub] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.010638022422790527,
+      "timestamp": "2026-02-02T14:38:41.219825"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_1.npz",
+      "error": "InvalidArgumentError: {{function_node __wrapped__Sub_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [7,3,64] vs. [3] [Op:Sub] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008609966437021891,
+      "timestamp": "2026-02-02T14:38:41.753399"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_0.npz",
+      "error": "InvalidArgumentError: {{function_node __wrapped__Sub_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [9,3,64] vs. [3] [Op:Sub] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.011258574326833089,
+      "timestamp": "2026-02-02T14:38:42.440294"
+    }
+  ]
+}

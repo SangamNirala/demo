@@ -1,0 +1,65 @@
+{
+  "model_name": "model3",
+  "order": 2,
+  "num_snps": 100,
+  "dataset_id": 1,
+  "filepath": "data\\processed\\model3\\order2\\snps100\\dataset_1.npz",
+  "dataset_info": {
+    "num_clients": 50,
+    "num_snps": 100,
+    "test_samples": 600,
+    "validation_samples": 600,
+    "classes": [
+      0,
+      1
+    ],
+    "class_imbalance_ratio": 1.0
+  },
+  "test_accuracy": 0.905,
+  "test_loss": 0.34813734889030457,
+  "per_class_accuracy": {
+    "0": 0.9933333333333333,
+    "1": 0.8166666666666667
+  },
+  "precision": 0.9919028340080972,
+  "recall": 0.8166666666666667,
+  "f1_score": 0.8957952468007314,
+  "best_val_accuracy": 0.9116666666666666,
+  "final_val_accuracy": 0.7316666666666667,
+  "final_round": 211,
+  "early_stopped": true,
+  "early_stop_round": 211,
+  "training_time_minutes": 123.53652334213257,
+  "total_parameters": 227926,
+  "avg_client_drift": 4.598221146172249,
+  "config": {
+    "min_rounds": 100,
+    "max_rounds": 500,
+    "patience": 80,
+    "local_epochs": 2,
+    "clients_per_round": 15,
+    "initial_lr": 0.003,
+    "min_lr": 1e-05,
+    "warmup_rounds": 15,
+    "use_warmup": true,
+    "use_nas": false,
+    "nas_frequency": 20,
+    "use_fedprox": true,
+    "fedprox_mu": 0.005
+  },
+  "training_summary": {
+    "total_rounds": 211,
+    "best_val_accuracy": 0.9116666666666666,
+    "final_val_accuracy": 0.7316666666666667,
+    "final_train_accuracy": 0.9697916666666667,
+    "early_stopped": true,
+    "early_stop_round": 211,
+    "total_time_minutes": 104.23545736471812,
+    "avg_round_time_seconds": 29.64041441650752,
+    "total_communication_mb": 183.45789337158203,
+    "avg_client_drift": 4.598221146172249,
+    "nas_searches_performed": 0,
+    "accuracy_improvement": 0.2316666666666667
+  },
+  "timestamp": "2026-02-11T19:43:08.863739"
+}

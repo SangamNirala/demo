@@ -1,0 +1,273 @@
+{
+  "total_completed": 24,
+  "successful": 0,
+  "failed": 24,
+  "elapsed_time_minutes": 0.2501447598139445,
+  "last_update": "2026-02-02T14:38:08.404493",
+  "results": [
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.01862756411234538,
+      "timestamp": "2026-02-02T14:37:54.513462"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps100\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006592949231465657,
+      "timestamp": "2026-02-02T14:37:54.918624"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.01160042683283488,
+      "timestamp": "2026-02-02T14:37:55.622685"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps1000\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008849708239237468,
+      "timestamp": "2026-02-02T14:37:56.165847"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.013852079709370932,
+      "timestamp": "2026-02-02T14:37:57.003026"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps2000\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.011139317353566488,
+      "timestamp": "2026-02-02T14:37:57.686405"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.007010769844055176,
+      "timestamp": "2026-02-02T14:37:58.125487"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps50\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.007112570603688558,
+      "timestamp": "2026-02-02T14:37:58.565463"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008799572785695394,
+      "timestamp": "2026-02-02T14:37:59.108550"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps500\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.010237483183542888,
+      "timestamp": "2026-02-02T14:37:59.736410"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.01637155214945475,
+      "timestamp": "2026-02-02T14:38:00.737588"
+    },
+    {
+      "model_name": "model1",
+      "order": 2,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order2\\snps5000\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.01415080229441325,
+      "timestamp": "2026-02-02T14:38:01.603196"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps100\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006486566861470541,
+      "timestamp": "2026-02-02T14:38:02.010873"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 100,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps100\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006754545370737711,
+      "timestamp": "2026-02-02T14:38:02.434534"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps1000\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008562922477722168,
+      "timestamp": "2026-02-02T14:38:02.952688"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 1000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps1000\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008260114987691244,
+      "timestamp": "2026-02-02T14:38:03.467067"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps2000\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.012640905380249024,
+      "timestamp": "2026-02-02T14:38:04.251627"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 2000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps2000\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.010638872782389322,
+      "timestamp": "2026-02-02T14:38:04.908235"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps50\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006941401958465576,
+      "timestamp": "2026-02-02T14:38:05.345011"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 50,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps50\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.006643605232238769,
+      "timestamp": "2026-02-02T14:38:05.753413"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps500\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008040976524353028,
+      "timestamp": "2026-02-02T14:38:06.253307"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 500,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps500\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.008063928286234538,
+      "timestamp": "2026-02-02T14:38:06.754722"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 0,
+      "filepath": "data\\processed\\model1\\order3\\snps5000\\dataset_0.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.013633823394775391,
+      "timestamp": "2026-02-02T14:38:07.589044"
+    },
+    {
+      "model_name": "model1",
+      "order": 3,
+      "num_snps": 5000,
+      "dataset_id": 1,
+      "filepath": "data\\processed\\model1\\order3\\snps5000\\dataset_1.npz",
+      "error": "InvalidArgumentError: cannot compute Mul as input #1(zero-based) was expected to be a float tensor but is a double tensor [Op:Mul] name: ",
+      "test_accuracy": 0.0,
+      "training_time_minutes": 0.013321471214294434,
+      "timestamp": "2026-02-02T14:38:08.404493"
+    }
+  ]
+}

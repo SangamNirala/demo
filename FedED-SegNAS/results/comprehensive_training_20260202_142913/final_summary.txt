@@ -1,0 +1,29 @@
+COMPREHENSIVE FEDERATED TRAINING SUMMARY
+================================================================================
+
+Timestamp: 2026-02-02T14:29:34.638814
+Total time: 0.4 minutes
+
+CONFIGURATION
+----------------------------------------
+  min_rounds: 50
+  max_rounds: 200
+  patience: 25
+  local_epochs: 3
+  clients_per_round: 12
+  initial_lr: 0.005
+  min_lr: 5e-05
+  warmup_rounds: 10
+  use_warmup: True
+  use_nas: False
+  nas_frequency: 15
+  use_fedprox: True
+  fedprox_mu: 0.01
+
+OVERALL STATISTICS
+----------------------------------------
+Total datasets: 178
+Successful: 0
+Failed: 178
+Success rate: 0.0%
+

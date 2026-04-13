@@ -1,0 +1,20 @@
+{
+  "config": {
+    "min_rounds": 1000,
+    "max_rounds": 1000,
+    "patience": null,
+    "local_epochs": 3,
+    "clients_per_round": 12,
+    "initial_lr": 0.005,
+    "min_lr": 5e-05,
+    "warmup_rounds": 50,
+    "use_warmup": true,
+    "use_nas": false,
+    "nas_frequency": 50,
+    "use_fedprox": true,
+    "fedprox_mu": 0.01
+  },
+  "num_datasets": 178,
+  "model_filter": null,
+  "start_time": "2026-02-03T13:53:09.199396"
+}
